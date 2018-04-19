@@ -1,0 +1,295 @@
+IF OBJECT_ID('dbo.PS_PURGE_INT', 'P') IS NOT NULL
+	DROP PROCEDURE dbo.PS_PURGE_INT;
+GO
+CREATE PROCEDURE dbo.PS_PURGE_INT
+    
+as
+BEGIN
+--INTERLOCUTEUR
+	DECLARE @INTsansvisites VARCHAR(10)
+    DECLARE @INTsansvisitesnbjours VARCHAR(10)
+    DECLARE @INTsansvisitesdate varchar(20)
+    DECLARE @INTsesvisites varchar(10)
+	DECLARE @INTanonymevisites varchar(10)
+	DECLARE @INTnoninterdit varchar(10)
+    DECLARE @INTsescolis varchar(10)
+	DECLARE @INTsesconsignesetmessages varchar(10)
+	DECLARE @INTsescourstaxis varchar(10)
+	DECLARE @INTconsigne varchar(10)
+	--RESIDANTS
+	DECLARE @RESnonactif VARCHAR(10)
+    DECLARE @RESsesvisites VARCHAR(10)
+    DECLARE @RESnonmajnbjours VARCHAR(10)
+    DECLARE @RESnonmajdate VARCHAR(20)
+
+	--VISITEUR
+	DECLARE @VISdatantdeplusnbjour varchar(10)
+	DECLARE @VISanterieurdate varchar(20)
+	DECLARE @VISanonymevisites varchar(10)
+	--SOCIETE
+	DECLARE @SOCnonutilise varchar(10)
+
+	--CONSIGNE
+	DECLARE @CONsupmessageslus varchar(10)
+
+	--COLISEMIS/COLISRECU
+	DECLARE @COLcolis varchar(10)
+
+	--TACHE_LOG
+	DECLARE @TALpurge varchar(10)
+
+	--Tache
+	DECLARE @TACexecuteouinactive varchar(10)
+	DECLARE @TACsesconfigs varchar(10)
+
+	--MAIL
+	DECLARE @MAIenvoye varchar(10)
+
+	--AGENDA_JOUR2
+	DECLARE @AJ2termine varchar(10)
+
+	--RESERVATION/LGRESERVATION
+	DECLARE @LGRtermineedepuisnbjours varchar(10)
+	DECLARE @LGRtermineedepuisdate varchar(20)
+	SET @INTanonymevisites=''
+	SET @INTsansvisites=''
+	SET @INTsansvisitesnbjours='180'
+	SET @INTsesvisites=''
+	SET @INTnoninterdit=''
+	SET @INTconsigne=''
+	SET @INTsescourstaxis=''
+	SET @INTsesconsignesetmessages=''
+	SET @VISdatantdeplusnbjour='120'
+	SET @VISanterieurdate=''
+	SET @VISanonymevisites='/'
+	SET @RESnonactif =''
+	SET @RESnonmajdate=''
+	SET @RESsesvisites=''
+	SET @RESnonmajnbjours=''
+	SET @TACexecuteouinactive=''
+	SET @TACsesconfigs=''
+	SET @TALpurge=''
+	SET @MAIenvoye=''
+	SET @AJ2termine=''
+	SET @COLcolis=''
+	SET @CONsupmessageslus=''
+	SET @SOCnonutilise=''
+	SET @LGRtermineedepuisdate=''
+	SET @LGRtermineedepuisnbjours=''
+	SELECT INTERLOCUTEURID INTO #MYINTERLOCUTEUR FROM INTERLOCUTEUR I WHERE
+		  (
+	   I.INTERLOCUTEURID<>'VPARDEFAUT'
+	   )
+	   AND
+	   0=(SELECT COUNT(INTERLOCUTEURID) FROM VISITES WHERE INTERLOCUTEURID=I.INTERLOCUTEURID AND statutid in (8,1,33,34))
+	   AND
+		(	((
+				(
+				@INTsansvisites<>'' and @INTsansvisites is not null and (0=(SELECT COUNT(INTERLOCUTEURID) FROM VISITES WHERE INTERLOCUTEURID=I.INTERLOCUTEURID AND statutid in (2,16,32,35)))
+				)
+			)
+			OR
+			(
+				@INTsansvisitesnbjours<>'' and @INTsansvisitesnbjours is not null and 0=(select COUNT(interlocuteurid) from visites where
+				(DATEADD(DD,CAST (@INTsansvisitesnbjours AS INT) ,CONVERT(DATETIME,finvisite,103))>CONVERT(DATETIME,current_timestamp,103) AND STATUTID IN (16,35)
+				OR
+				(DATEADD(DD,CAST (@INTsansvisitesnbjours AS INT),CONVERT(DATETIME,finprevu,103))>CONVERT(DATETIME,current_timestamp,103) AND STATUTID IN (2,32))
+				) 	AND (I.INTERLOCUTEURID=INTERLOCUTEURID)
+				)
+			)
+			OR
+			(
+				@INTsansvisitesdate<>'' and @INTsansvisitesdate is not null and 0=(select count(interlocuteurid) from visites where
+				(CONVERT(DATETIME,finvisite,103)>CONVERT(DATETIME,@INTsansvisitesdate,103) AND STATUTID IN (16,35)
+				OR
+				CONVERT(DATETIME,finprevu,103)>CONVERT(DATETIME,@INTsansvisitesdate,103) AND STATUTID IN(2,32)
+				)
+				AND (I.INTERLOCUTEURID=INTERLOCUTEURID)
+				)
+
+			)
+		)
+		AND
+			(
+				(@INTnoninterdit<>'' and @INTnoninterdit is not null)
+				OR
+				(
+				( (@INTnoninterdit='' or @INTnoninterdit is  null) and (I.interdit='0' or I.interdit is null) )
+				)
+			)
+		AND
+			(
+				(@INTconsigne<>'' and @INTconsigne is not null)
+				OR
+				(
+				(@INTconsigne='' or @INTconsigne is  null) and
+				( 0=(SELECT COUNT(CONSIGNEID) FROM CONSIGNE WHERE RESIDANTID='VISITEUR' AND INTERLOCUTEURID=I.INTERLOCUTEURID))
+
+				)
+
+			)
+		)
+			 
+
+		If @VISanonymevisites<>'' and @VISanonymevisites is not null BEGIN
+
+
+		UPDATE VISITES SET INTERLOCUTEURID='VPARDEFAUT',NOMPRENOMVISIT=(SELECT NOMPRENOM FROM INTERLOCUTEUR WHERE INTERLOCUTEURID='VPARDEFAUT') WHERE STATUTID=-1 OR (
+			STATUTID NOT IN (1,8,33,34) AND
+				(INTERLOCUTEURID<>'VPARDEFAUT')
+				AND
+				(
+					(@VISdatantdeplusnbjour<>''  AND @VISdatantdeplusnbjour IS NOT NULL
+					 AND
+						(
+							(DATEADD(DD,CAST (@VISdatantdeplusnbjour AS INT) ,CONVERT(DATETIME,finvisite,103))<CONVERT(DATETIME,current_timestamp,103) AND STATUTID IN (16,35) )
+							OR
+							(DATEADD(DD,CAST (@VISdatantdeplusnbjour AS INT) ,CONVERT(DATETIME,finprevu,103))<CONVERT(DATETIME,current_timestamp,103)	AND STATUTID IN (2,32))
+						 )
+					)
+					OR
+					(@VISanterieurdate<>'' AND @VISanterieurdate IS NOT NULL
+					AND
+						(
+							(CONVERT(DATETIME,finvisite,103)<CONVERT(DATETIME,@VISanterieurdate,103) AND STATUTID IN (16,35) )
+							OR
+							(CONVERT(DATETIME,FINPREVU,103)<CONVERT(DATETIME,@VISanterieurdate,103) AND STATUTID IN (2,32) )
+						)
+					)
+				)
+			)
+
+		END ELSE BEGIN
+			DELETE FROM VISITES  WHERE STATUTID=-1 OR (
+			STATUTID NOT IN (1,8,33,34) AND
+				(INTERLOCUTEURID<>'VPARDEFAUT')
+				AND
+				(
+					(@VISdatantdeplusnbjour<>''  AND @VISdatantdeplusnbjour IS NOT NULL
+					 AND
+						(
+							(DATEADD(DD,CAST (@VISdatantdeplusnbjour AS INT) ,CONVERT(DATETIME,finvisite,103))<CONVERT(DATETIME,current_timestamp,103) AND STATUTID IN (16,35) )
+							OR
+							(DATEADD(DD,CAST (@VISdatantdeplusnbjour AS INT) ,CONVERT(DATETIME,finprevu,103))<CONVERT(DATETIME,current_timestamp,103)	AND STATUTID IN (2,32))
+						 )
+					)
+					OR
+					(@VISanterieurdate<>'' AND @VISanterieurdate IS NOT NULL
+					AND
+						(
+							(CONVERT(DATETIME,finvisite,103)<CONVERT(DATETIME,@VISanterieurdate,103) AND STATUTID IN (16,35) )
+							OR
+							(CONVERT(DATETIME,FINPREVU,103)<CONVERT(DATETIME,@VISanterieurdate,103) AND STATUTID IN (2,32) )
+						)
+					)
+				)
+			)
+	END
+
+	If @INTanonymevisites<>'' and @INTanonymevisites is not null and @INTsesvisites<>'' BEGIN
+		UPDATE VISITES SET INTERLOCUTEURID='VPARDEFAUT',NOMPRENOMVISIT=(SELECT NOMPRENOM FROM INTERLOCUTEUR WHERE INTERLOCUTEURID='VPARDEFAUT') WHERE  
+		STATUTID NOT IN (1,8,33,34) AND interlocuteurid IN (  SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR)
+	END
+	IF @INTsesvisites<>'' AND (@INTanonymevisites='' or @INTanonymevisites is null)   BEGIN
+		DELETE FROM VISITES WHERE  STATUTID NOT IN (1,8,33,34) AND interlocuteurid IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+	END
+	DELETE FROM VISITE_ACTION WHERE (SELECT COUNT(VISITEID) FROM VISITES WHERE VISITEID=VISITE_ACTION.VISITEID)=0
+	DELETE FROM VISITE_REGLE WHERE (SELECT COUNT(VISITEID) FROM VISITES WHERE VISITEID=VISITE_REGLE.VISITEID)=0
+
+	DELETE FROM IDENTITES WHERE  INTERLOCUTEURID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+	DELETE FROM XANNEXE WHERE ORIGINE='INTERLOCUTEUR' AND ORIGINEID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR  )
+    DELETE FROM INTER_ACTION WHERE (SELECT COUNT(INTERLOCUTEURID) FROM INTERLOCUTEUR WHERE INTERLOCUTEURID=INTER_ACTION.INTERLOCUTEURID)=0
+	DELETE FROM INTERLOCUTEUR  WHERE INTERLOCUTEURID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+	
+	IF @INTsescolis<>'' and @INTsescolis is not null BEGIN
+		DELETE FROM COLISEMIS WHERE INTERLOCUTEURID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+		DELETE FROM COLISRECU WHERE INTERLOCUTEURID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+	END
+	if(@INTsesconsignesetmessages<>'')begin
+		DELETE FROM CONSIGNE WHERE INTERLOCUTEURID IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+	END
+	IF @INTsescourstaxis<>'' AND @INTsescourstaxis IS NOT NULL BEGIN
+	delete from course where ID_COURSE in (select ID_course from PASSAGERTAXI where interlocuteurid IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR ))
+	delete from PASSAGERTAXI where interlocuteurid IN ( SELECT INTERLOCUTEURID FROM #MYINTERLOCUTEUR )
+
+	END
+
+	SELECT residantid INTO #MYRESIDANT
+	   from residants
+		where
+		(residantid<>'VPARDEFAUT') AND
+		((@RESnonmajnbjours<>'' and @RESnonmajnbjours is not null and datemaj<current_timestamp-cast(@RESnonmajnbjours as int)) OR
+		(@RESnonmajdate <>'' and @RESnonmajdate is not null and datediff(d,datemaj,cast(@RESnonmajdate as datetime))<0) OR
+		(@RESnonactif<>'' and @RESnonactif is not null and isactif='0')
+		AND (
+		(@INTnoninterdit<>'' and @INTnoninterdit is not null)
+			OR
+			(
+			(@INTnoninterdit='' or @INTnoninterdit is  null) and (interdit='0' or interdit is null)
+			)
+		))
+		
+			DELETE FROM HVISITES WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM HVISITES WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM PASSAGER WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM PASSAGERTAXI WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM LGPARTICIPANT WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM HLGPARTICIPANT WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM SECRETARIAT where RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT) OR RESIDANTID2 IN (SELECT RESIDANTID FROM #MYRESIDANT)			
+			DELETE FROM LIEUPERMIS WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM USERS WHERE EXTERNALID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM VEHICULE WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM COLISEMIS WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM COLISRECU WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM CONSIGNE WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM EVENEMENTCOLIS WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM FACTURE WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM DROITS WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM VEHICULE_DEMANDE WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			DELETE FROM INTER_RSERVICE WHERE  RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			
+			IF   (@RESsesvisites is not null and @RESsesvisites<>'')  BEGIN
+					DELETE FROM VISITE_CONTROLE WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)		
+					DELETE FROM VISITES_RESIDANTS WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					DELETE FROM VISITES_TEMP WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					DELETE FROM ZCL01_VISITERE WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					DELETE FROM VISITES WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					
+			END ELSE BEGIN
+					UPDATE VISITE_CONTROLE  SET RESIDANTID='VPARDEFAUT'  WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)	
+					UPDATE VISITES_RESIDANTS  SET RESIDANTID='VPARDEFAUT'  WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT) ;
+					UPDATE VISITES_TEMP  SET RESIDANTID='VPARDEFAUT'  WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					UPDATE ZCL01_VISITERE  SET RESIDANTID='VPARDEFAUT'  WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+					UPDATE VISITES SET RESIDANTID='VPARDEFAUT', NOMPRENOMRESID=(SELECT NOM+' '+PRENOM FROM RESIDANTS WHERE RESIDANTID='VPARDEFAUT') WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+			END
+			
+	DELETE from RESIDANTS WHERE RESIDANTID IN (SELECT RESIDANTID FROM #MYRESIDANT)
+
+	DELETE FROM TACHE WHERE @TACexecuteouinactive<>'' and @TACexecuteouinactive is not null and actif<0
+	DELETE FROM CFG_FICHIER WHERE  @TACsesconfigs<>'' AND CFG_FICHIERID IN (SELECT ACT_PARAM FROM TACHE WHERE @TACexecuteouinactive<>'' and @TACexecuteouinactive is not null and actif<0)
+	DELETE FROM TACHE_LOG WHERE @TALpurge<>''
+	DELETE FROM MAIL WHERE STATUT<>-1 AND @MAIenvoye<>''
+	DELETE FROM agenda_jour2 where STATUT=5 AND (@AJ2termine<>'')
+	DELETE FROM COLISEMIS WHERE  (@COLcolis<>'')
+	DELETE FROM COLISRECU WHERE  (@COLcolis<>'')
+	DELETE FROM CONSIGNE where TYPECONSIGNE='MESSAGES' AND DATELU is not null AND (@CONsupmessageslus<>'')
+	DELETE FROM SOCIETE WHERE (@SOCnonutilise<>'') AND societeid in ( SELECT SOCIETEID FROM SOCIETE I WHERE
+	 0=(Select COUNT(societeid) from interlocuteur WHERE SOCIETEID=I.SOCIETEID) AND 0=(select COUNT(societeid) from residants WHERE SOCIETEID=I.SOCIETEID)) AND SOCIETEID<>'VPARDEFAUT'
+	DELETE FROM reservation where codereservation in (SELECT CODERESERVATION FROM LGRESERVATION WHERE CODERESERVATION IN (SELECT codelgreservation
+	   from lgreservation
+	   where
+		(@LGRtermineedepuisnbjours<>'' and @LGRtermineedepuisnbjours is not null and DateAdd(DD, cast(@LGRtermineedepuisnbjours as int),CONVERT(DATETIME,datefin,103))<CONVERT(DATETIME,current_timestamp,103)))
+		OR
+		(@LGRtermineedepuisdate<>'' and @LGRtermineedepuisdate is not null and CONVERT(DATETIME,datefin,103)<CONVERT(DATETIME,@LGRtermineedepuisdate,103)))
+
+	DELETE FROM LGRESERVATION WHERE  codelgreservation IN (SELECT codelgreservation
+	   from lgreservation
+	   where
+		(@LGRtermineedepuisnbjours<>'' and @LGRtermineedepuisnbjours is not null and DateAdd(DD, cast(@LGRtermineedepuisnbjours as int),CONVERT(DATETIME,datefin,103))<CONVERT(DATETIME,current_timestamp,103)))
+		OR
+		(@LGRtermineedepuisdate<>'' and @LGRtermineedepuisdate is not null and CONVERT(DATETIME,datefin,103)<CONVERT(DATETIME,@LGRtermineedepuisdate,103))
+ 
+	DROP TABLE #MYINTERLOCUTEUR
+	DROP TABLE #MYRESIDANT
+END
+GO

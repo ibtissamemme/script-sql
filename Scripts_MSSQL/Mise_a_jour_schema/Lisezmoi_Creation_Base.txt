@@ -1,0 +1,3 @@
+Pour un nouveau site, lancer le GeneSmv_8i_SqlServer.bat
+Pour une mise à jour d'un site, voir dans le répertoire Mise_a_jour_schema,
+et regarder par rapport aux dates, les mises à jour à intégrer
