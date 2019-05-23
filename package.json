@@ -1,0 +1,23 @@
+{
+  "name": "script-sql",
+  "version": "1.0.0",
+  "description": "Script SQL for HamiltonApps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://saf-mat@bitbucket.org/safeware/script-sql.git"
+  },
+  "keywords": [
+    "sql",
+    "script"
+  ],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/safeware/script-sql#readme",
+  "dependencies": {
+    "sql-source-control": "^2.1.1"
+  }
+}

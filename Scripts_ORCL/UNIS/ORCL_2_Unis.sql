@@ -1,6 +1,6 @@
 -- *******************************************************************************
 -- *                                                                             *
--- *  U N I S   ORACLE                 Date de dernière mise à jour : 20/04/2010 *
+-- *  U N I S   ORACLE                 Date de derniï¿½re mise ï¿½ jour : 20/04/2010 *
 -- *                                                                             *
 -- *******************************************************************************
 --
@@ -895,7 +895,7 @@ CREATE TABLE OBJVISITE
   DATEMAJ DATE,
   DATESYNCHRO DATE);
 
-  
+
 CREATE TABLE GRPUSER (
    GRPUSERID      VARCHAR2(14 CHAR) PRIMARY KEY,
    LIBELLE        VARCHAR2(50 CHAR),
@@ -1184,7 +1184,7 @@ CONSTRAINT PK_IMPUTATIONID PRIMARY KEY (IMPUTATIONID));
 
 --  Table IMPUTATION_TYPE
 CREATE TABLE IMPUTATION_TYPE (
-  IMPUTATION_TYPEID VARCHAR2(14 CHAR) NOT NULL,
+  IMPUTATION_TYPEID VARCHAR2(14 CHAR) NOT NULL PRIMARY KEY,
   LIBELLE VARCHAR2(35 CHAR) );
 
 --  Table INDCLE
@@ -4028,7 +4028,7 @@ CREATE TABLE ZCL07_BADGETYPE
 
 -----------------------------------------------------------
 
-----------------------E/S réelle chez le résidant--------------------
+----------------------E/S rï¿½elle chez le rï¿½sidant--------------------
 CREATE TABLE VISITES_ES
 (
 VISITEID    VARCHAR2(14 CHAR)    NOT NULL,
@@ -4466,7 +4466,7 @@ CREATE GLOBAL TEMPORARY TABLE TEMPO_GS
     FREEDATE4    DATE
 ) ON COMMIT PRESERVE ROWS ;
 
--- Création d'une table temporaire
+-- Crï¿½ation d'une table temporaire
 CREATE GLOBAL TEMPORARY TABLE TEMPO_TQ
 (    FREE1    VARCHAR2(100 CHAR),
     FREE2    VARCHAR2(100 CHAR),
