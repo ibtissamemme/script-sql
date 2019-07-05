@@ -1,9 +1,0 @@
-
-Les procédures et vues suivants ne sont pas testées
-CREATE OR REPLACE VIEW VISITES_EN_COURS
-CREATE OR REPLACE PROCEDURE SORTIE
-Localisation :
-Mise_a_jour_schema\59_T_ORCL_2010_08_24.sql
-UNIS\ORCL_5_Unis_ProcStockees.sql
-
-Manque la procédure PS_SELECT_LGRESA pour oracle
