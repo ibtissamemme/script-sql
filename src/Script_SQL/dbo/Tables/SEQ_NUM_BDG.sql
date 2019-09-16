@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[SEQ_NUM_BDG](
+	[SEQ_NUM_BDGID] [int] IDENTITY(1,1) NOT NULL,
+	[LIBELLE] [varchar](35) NULL
+) ON [PRIMARY]

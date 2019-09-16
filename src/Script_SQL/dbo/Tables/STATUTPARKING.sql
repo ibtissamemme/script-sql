@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[STATUTPARKING](
+	[CODE_STATUT] [varchar](1) NULL,
+	[STATUT_NAME] [varchar](25) NULL
+) ON [PRIMARY]

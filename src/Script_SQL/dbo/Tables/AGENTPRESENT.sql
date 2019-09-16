@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[AGENTPRESENT](
+	[PERSONNELID] [int] NULL,
+	[NOMPRENOM] [varchar](50) NULL,
+	[ENTREE] [datetime] NULL,
+	[SORTIE] [datetime] NULL,
+	[SURSITE] [int] NULL,
+	[PARPRISE] [int] NULL,
+	[FONCTION] [varchar](35) NULL,
+	[SITEID] [varchar](14) NULL,
+	[POSTEID] [int] NULL
+) ON [PRIMARY]

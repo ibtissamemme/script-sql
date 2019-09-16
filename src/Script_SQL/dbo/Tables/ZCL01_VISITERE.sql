@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[ZCL01_VISITERE](
+	[EXTERNALID] [varchar](14) NULL,
+	[RESIDANTID] [varchar](14) NULL
+) ON [PRIMARY]

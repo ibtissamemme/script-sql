@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[ZCL01_ACTION](
+	[ACTIONID] [int] NOT NULL,
+	[LIBELLE] [varchar](30) NULL,
+	[NSMI] [int] NULL
+) ON [PRIMARY]

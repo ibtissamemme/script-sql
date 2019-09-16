@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[ZCL24_BADGE](
+	[BADGEID] [varchar](50) NULL,
+	[NUMBADGE] [varchar](50) NULL,
+	[DATECREATION] [datetime] NULL
+) ON [PRIMARY]

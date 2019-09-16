@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[EVTPERSONNEL](
+	[PERSONNELID] [int] NOT NULL,
+	[EVENEMENTID] [int] NULL,
+	[DATEMAJ] [datetime] NULL,
+	[DATECREATION] [datetime] NULL,
+	[DATESYNCHRO] [datetime] NULL
+) ON [PRIMARY]

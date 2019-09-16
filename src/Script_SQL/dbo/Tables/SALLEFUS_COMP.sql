@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[SALLEFUS_COMP](
+	[CODESALLEFUS] [varchar](14) NULL,
+	[CODESALLE] [varchar](14) NULL
+) ON [PRIMARY]

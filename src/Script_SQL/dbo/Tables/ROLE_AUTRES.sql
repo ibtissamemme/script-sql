@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[ROLE_AUTRES](
+	[USERID] [int] NULL,
+	[SITE] [int] NULL,
+	[SOC_RES] [int] NULL,
+	[DIRECTIONS] [int] NULL,
+	[PAYS] [int] NULL,
+	[UTILISATEURS] [int] NULL,
+	[TYPEUSER] [int] NULL,
+	[PROFILUSER] [int] NULL,
+	[MODIFAFF] [int] NULL,
+	[VILLES] [int] NULL,
+	[DATECREATION] [datetime] NULL,
+	[DATEMAJ] [datetime] NULL,
+	[GRPSITE] [int] NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ROLE_AUTRES] ADD  DEFAULT ((0)) FOR [GRPSITE]

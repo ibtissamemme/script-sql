@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[IMPORT_PARTICIPANT](
+	[ID] [varchar](18) NULL,
+	[RNOM] [varchar](30) NULL,
+	[RPRENOM] [varchar](30) NULL,
+	[RMATRICULE] [varchar](30) NULL,
+	[RCIVILITE] [varchar](30) NULL,
+	[REMAIL] [varchar](70) NULL,
+	[RSOCIETE] [varchar](30) NULL,
+	[REFRESA] [varchar](30) NULL
+) ON [PRIMARY]

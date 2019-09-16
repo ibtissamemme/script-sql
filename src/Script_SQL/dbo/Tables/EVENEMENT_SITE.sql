@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[EVENEMENT_SITE](
+	[EVENEMENTID] [int] NULL,
+	[SITEID] [varchar](14) NULL
+) ON [PRIMARY]

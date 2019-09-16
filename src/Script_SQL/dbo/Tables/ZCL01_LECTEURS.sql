@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[ZCL01_LECTEURS](
+	[LE_CIRCUI] [varchar](8) NOT NULL,
+	[LE_DESCRI] [varchar](50) NULL,
+	[NSMI] [int] NULL
+) ON [PRIMARY]

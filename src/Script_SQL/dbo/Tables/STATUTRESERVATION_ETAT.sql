@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[STATUTRESERVATION_ETAT](
+	[ID] [int] NULL,
+	[TEXTE] [varchar](50) NULL,
+	[DATECREATION] [datetime] NOT NULL,
+	[DATEMAJ] [datetime] NOT NULL,
+	[DATESYNCHRO] [datetime] NULL
+) ON [PRIMARY]

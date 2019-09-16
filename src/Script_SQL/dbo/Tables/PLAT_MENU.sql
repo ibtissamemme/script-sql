@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[PLAT_MENU](
+	[PLATID] [varchar](14) NOT NULL,
+	[MENUID] [varchar](14) NOT NULL
+) ON [PRIMARY]

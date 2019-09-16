@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[CFGETAT](
+	[CFGETATID] [varchar](50) NULL,
+	[ETATNOM] [varchar](50) NULL,
+	[VISIBLE] [int] NULL,
+	[REQUETE] [varchar](50) NULL,
+	[FILTRE] [varchar](250) NULL,
+	[DATECREATION] [datetime] NULL,
+	[DATEMAJ] [datetime] NULL
+) ON [PRIMARY]

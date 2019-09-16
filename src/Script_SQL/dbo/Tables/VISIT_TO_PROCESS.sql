@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[VISIT_TO_PROCESS](
+	[DEVICEID] [int] NULL,
+	[VISITEID] [varchar](14) NULL
+) ON [PRIMARY]

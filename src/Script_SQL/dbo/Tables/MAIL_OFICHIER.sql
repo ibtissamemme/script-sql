@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[MAIL_OFICHIER](
+	[MAILID] [varchar](14) NULL,
+	[OFICHIERID] [int] NULL
+) ON [PRIMARY]

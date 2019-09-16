@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[VISITES_EXT_L](
+	[VISITEID_ANCIEN] [varchar](14) NULL,
+	[VISITEID_NOUVEAU] [varchar](14) NULL
+) ON [PRIMARY]

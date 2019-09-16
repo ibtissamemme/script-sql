@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[JSECOURS](
+	[SECOURSID] [int] NULL,
+	[EVENEMENTID] [int] NULL
+) ON [PRIMARY]

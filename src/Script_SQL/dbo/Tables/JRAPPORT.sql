@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[JRAPPORT](
+	[JOURNALID] [int] NULL,
+	[RAPPORTID] [int] NULL,
+	[EVENEMENTID] [int] NULL,
+	[REF] [varchar](20) NULL,
+	[MISSIONID] [int] NULL,
+	[CLOTURER] [int] NULL
+) ON [PRIMARY]

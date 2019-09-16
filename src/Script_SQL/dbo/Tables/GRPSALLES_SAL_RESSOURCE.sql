@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[GRPSALLES_SAL_RESSOURCE](
+	[GRPSALLEID] [varchar](14) NULL,
+	[SALLEID] [varchar](14) NULL
+) ON [PRIMARY]

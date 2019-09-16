@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[LU_CSG](
+	[PERSONNELID] [int] NOT NULL,
+	[CONSIGNEID] [int] NULL,
+	[DATEMAJ] [datetime] NULL,
+	[DATECREATION] [datetime] NULL,
+	[DATESYNCHRO] [datetime] NULL
+) ON [PRIMARY]
