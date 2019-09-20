@@ -10,5 +10,6 @@
 	[INSPECCOMMUNE] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
-	[DATESYNCHRO] [datetime] NULL
+	[DATESYNCHRO] [datetime] NULL, 
+    CONSTRAINT [PK_MARCHE] PRIMARY KEY ([MARCHEID])
 ) ON [PRIMARY]

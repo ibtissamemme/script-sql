@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[TQ_POSTE](
-	[NOM_POSTE] [varchar](50) NULL,
+	[NOM_POSTE] [varchar](50) NOT NULL,
 	[CLE_CONNEXION] [varchar](50) NULL,
 	[NB_CAR_RECHERCHE] [int] NULL,
 	[DELAI_RECHERCHE] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [varchar](14) NOT NULL,
 	[SITE] [varchar](50) NULL,
 	[GUICHETID] [varchar](14) NULL,
 	[GUICHET] [varchar](50) NULL,
@@ -123,7 +123,8 @@
 	[MILIEU_FORMATEXT] [varchar](20) NULL,
 	[FIN_CODEEXT] [varchar](20) NULL,
 	[COCHER_PHS] [int] NULL,
-	[CTRL_ACTIF] [int] NULL
+	[CTRL_ACTIF] [int] NULL, 
+    CONSTRAINT [PK_TQ_POSTE] PRIMARY KEY ([SITEID], [NOM_POSTE])
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[TQ_POSTE] ADD  DEFAULT ((0)) FOR [MODE_ES_RSDT]

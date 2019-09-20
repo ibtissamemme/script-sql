@@ -4,5 +4,6 @@
 	[ZONERESPONSABLE] [varchar](30) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
-	[DATESYNCHRO] [datetime] NULL
+	[DATESYNCHRO] [datetime] NULL, 
+    CONSTRAINT [PK_ZONE] PRIMARY KEY ([ZONEID])
 ) ON [PRIMARY]

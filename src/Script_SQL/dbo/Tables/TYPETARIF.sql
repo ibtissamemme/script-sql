@@ -6,5 +6,6 @@
 	[HEUREFIN] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
-	[DATESYNCHRO] [datetime] NULL
+	[DATESYNCHRO] [datetime] NULL, 
+    CONSTRAINT [PK_TYPETARIF] PRIMARY KEY ([CODETYPETARIF])
 ) ON [PRIMARY]

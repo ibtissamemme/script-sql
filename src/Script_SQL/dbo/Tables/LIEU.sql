@@ -4,5 +4,6 @@
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL
+	[SITEID] [varchar](14) NULL, 
+    CONSTRAINT [PK_LIEU] PRIMARY KEY ([LIEUID])
 ) ON [PRIMARY]

@@ -24,6 +24,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <GenerateCreateScript>True</GenerateCreateScript>
+    <DacVersion>1.0.0.1</DacVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -468,7 +469,7 @@
     <Build Include="dbo\Tables\ZCTRL_FIL_EAU.sql" />
     <Build Include="dbo\Tables\ZONE.sql" />
     <Build Include="dbo\Tables\ZRR.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Scripts\Script.Insert.Default.sql" />
     <Build Include="dbo\Stored Procedures\ADDMEETING_INNES.sql" />
     <Build Include="dbo\Stored Procedures\DELMEETING_INNES.sql" />
     <Build Include="dbo\Stored Procedures\DERN_ACTION_SITE.sql" />
@@ -690,8 +691,15 @@
     <Build Include="dbo\Functions\F_DATERAPPEL.sql" />
     <Build Include="dbo\Tables\RAPPEL_DEFAUT.sql" />
     <Build Include="dbo\Tables\DEVICE_SETTINGS.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Script_SQL.publish.xml" />
+    <None Include="Scripts\Script.Insert.Countries.sql" />
+    <None Include="Scripts\Script.Insert.Referent.sql" />
+    <None Include="Scripts\Script.Update.sql" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)$(OutputPath)Script_SQL.dacpac" "..\..\..\..\Scripts\Master.dacpac"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[ROLE_AUTRES](
-	[USERID] [int] NULL,
+	[USERID] [int] NOT NULL,
 	[SITE] [int] NULL,
 	[SOC_RES] [int] NULL,
 	[DIRECTIONS] [int] NULL,
@@ -11,7 +11,8 @@
 	[VILLES] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
-	[GRPSITE] [int] NULL
+	[GRPSITE] [int] NULL, 
+    CONSTRAINT [PK_ROLE_AUTRES] PRIMARY KEY ([USERID])
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[ROLE_AUTRES] ADD  DEFAULT ((0)) FOR [GRPSITE]

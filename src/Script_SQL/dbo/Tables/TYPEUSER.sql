@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[TYPEUSER](
-	[USERID] [int] NULL,
+	[USERID] [int] NOT NULL,
 	[LIBELLE] [varchar](50) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
-	[DATESYNCHRO] [datetime] NULL
+	[DATESYNCHRO] [datetime] NULL, 
+    CONSTRAINT [PK_TYPEUSER] PRIMARY KEY ([USERID])
 ) ON [PRIMARY]

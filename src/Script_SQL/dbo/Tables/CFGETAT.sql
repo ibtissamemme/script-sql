@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [dbo].[CFGETAT](
-	[CFGETATID] [varchar](50) NULL,
+	[CFGETATID] [varchar](50) NOT NULL,
 	[ETATNOM] [varchar](50) NULL,
 	[VISIBLE] [int] NULL,
 	[REQUETE] [varchar](50) NULL,
 	[FILTRE] [varchar](250) NULL,
 	[DATECREATION] [datetime] NULL,
-	[DATEMAJ] [datetime] NULL
+	[DATEMAJ] [datetime] NULL, 
+    CONSTRAINT [PK_CFGETAT] PRIMARY KEY ([CFGETATID])
 ) ON [PRIMARY]

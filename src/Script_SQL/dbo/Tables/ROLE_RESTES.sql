@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [dbo].[ROLE_RESTES](
-	[USERID] [int] NULL,
+	[USERID] [int] NOT NULL,
 	[EXPORT_TABLES] [int] NULL,
 	[STAT] [int] NULL,
 	[ETATS] [int] NULL,
 	[NETTOYAGES] [int] NULL,
 	[DATECREATION] [datetime] NULL,
-	[DATEMAJ] [datetime] NULL
+	[DATEMAJ] [datetime] NULL, 
+    CONSTRAINT [PK_ROLE_RESTES] PRIMARY KEY ([USERID])
 ) ON [PRIMARY]

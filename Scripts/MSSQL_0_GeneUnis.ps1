@@ -1,21 +1,58 @@
+Do {
+    $mode = Read-Host 'Choose your authentication mode (1 - SQL, 2 - Windows)'
+}
+Until($mode -eq 1 -Or $mode -eq 2)
 $server = Read-Host 'Server? if null = (local)'
 $dataBase = Read-Host 'Database?'
-$login = Read-Host 'Login?'
-$password = Read-Host 'Password?'
 
-if ($server -eq "") {
+if ($null -eq $server) {
     $server = "(local)"
 }
 
-# $StringArray = "DataBase='" + $dataBase + "'" , "Login='" + $login + "'", "Password='" + $password + "'"
-$StringArray = "DataBase='test'"
-Write-Output   $StringArray
-Invoke-Sqlcmd -ServerInstance $server -Variable $StringArray -InputFile "MSSQL_1_UnisParLeSystem.sql"
-Invoke-Sqlcmd -ServerInstance $server -Database $dataBase -Variable $StringArray -InputFile "MSSQL_2_UnisUser.sql"
+$path = Get-Location
+if (Test-Path "$path\Output") {
+}
+else {
+    New-Item -Name Output -Path $path -ItemType Directory
+}
 
-<# sqlcmd -E -S $server -d UNIS -i MSSQL_3_Unis.sql -o log_MSSQL_3_Unis.log
-sqlcmd -E -S $server -d UNIS -i MSSQL_4_Unis_InsD.sql -o log_MSSQL_4_Unis_InsD.log
-sqlcmd -E -S $server -d UNIS -i MSSQL_5_Unis_tablereference.sql -o log_MSSQL_5_tablereference.log
-sqlcmd -E -S $server -d UNIS -i MSSQL_6_UnisUserOwner.sql -o log_MSSQL_6_UNISUserOwner.log
-sqlcmd -E -S $server -d UNIS -i MSSQL_7_Unis_Vues.sql -o log_MSSQL_7_Unis_Vues.log
-sq lcmd -E -S $server -d UNIS -i MSSQL_8_Unis_ProcStockees.sql -o log_MSSQL_8_Unis_ProcStockees.log#>
+$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
+
+$login = Read-Host 'Login?'
+
+if ($mode -eq 1) {
+
+    $password = Read-Host 'Password?' -AsSecureString
+
+    $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password)
+    $value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
+
+    # Create datebase and user
+    sqlcmd -E -S $server -v DataBase=$dataBase -i "$path\MSSQL_1_UnisParLeSystem.sql" -o "$path\Output\MSSQL_1_UnisParLeSystem.txt"
+    sqlcmd -E -S $server -d $dataBase -v DataBase=$dataBase Login=$login Password=$value -i "$path\MSSQL_2_UnisUser.sql" -o "$path\Output\MSSQL_2_UnisUser.txt"
+
+    # Extract schema model client
+    & "$sqlPackageFileName" /Action:Extract /SourceConnectionString:"Data Source=$server;Initial Catalog=$dataBase;User ID=$login;Password=$value" /tf:"$path\Output\Client.dacpac" /p:IgnoreExtendedProperties=True /p:IgnorePermissions=False /p:ExtractApplicationScopedObjectsOnly=True /p:IgnoreUserLoginMappings=True /p:VerifyExtraction=True
+
+    # Generate script
+    & "$sqlPackageFileName" /a:Script /sf:"$path\Master.dacpac" /tf:"$path\Output\Client.dacpac" /tdn:"$dataBase" /op:"$path\Output\DifferenceScript.sql" /p:GenerateSmartDefaults=True
+
+    # Execute script
+    sqlcmd -S $server -d $dataBase -U $login -P $value -i "$path\Output\DifferenceScript.sql" -o "$path\Output\Output.txt"
+}
+
+if ($mode -eq 2) {
+
+    # Create datebase and user
+    sqlcmd -E -S $server -v DataBase=$dataBase -i "$path\MSSQL_1_UnisParLeSystem.sql" -o "$path\Output\MSSQL_1_UnisParLeSystem.txt"
+    sqlcmd -E -S $server -d $dataBase -v DataBase=$dataBase Login=$login -i "$path\MSSQL_2_UnisUserAuthWindows.sql" -o "$path\Output\MSSQL_2_UnisUserAuthWindows.txt"
+
+    # Extract schema model client
+    & "$sqlPackageFileName" /Action:Extract /SourceConnectionString:"Data Source=$server;Initial Catalog=$dataBase;Integrated Security=true;" /tf:"$path\Output\Client.dacpac" /p:IgnoreExtendedProperties=True /p:IgnorePermissions=False /p:ExtractApplicationScopedObjectsOnly=True /p:IgnoreUserLoginMappings=True /p:VerifyExtraction=True
+
+    # Generate script
+    & "$sqlPackageFileName" /a:Script /sf:"$path\Master.dacpac" /tf:"$path\Output\Client.dacpac" /tdn:"$dataBase" /op:"$path\Output\DifferenceScript.sql" /p:GenerateSmartDefaults=True
+
+    # Execute script
+    sqlcmd -E -S $server -d $dataBase -i "$path\Output\DifferenceScript.sql" -o "$path\Output\Output.txt"
+}
