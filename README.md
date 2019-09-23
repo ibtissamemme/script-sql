@@ -11,6 +11,11 @@
 
 No breaking changes
 
+## TODO
+
+* Insertion par défaut
+* Authentification Windows
+
 ## Requirements
 
 * [SqlPackage](https://docs.microsoft.com/fr-fr/sql/tools/sqlpackage?view=sql-server-2017)
