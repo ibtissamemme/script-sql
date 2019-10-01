@@ -17,7 +17,11 @@ PRINT 'Insertion par défaut'
 :r .\Script.Insert.Default.sql
 PRINT 'Table de référence'
 :r .\Script.Insert.Referent.sql
+PRINT 'Table de paramétrage'
+:r .\Script.Insert.Settings.sql
 PRINT 'Table Pays'
 :r .\Script.Insert.Countries.sql
 PRINT 'Update'
 :r .\Script.Update.sql
+PRINT 'Version'
+:r .\Script.Update.Version.sql

@@ -133,8 +133,6 @@
     <Build Include="dbo\Tables\DROITS.sql" />
     <Build Include="dbo\Tables\DROITSTAXI.sql" />
     <Build Include="dbo\Tables\DROITSTELEM.sql" />
-    <Build Include="dbo\Tables\DROIT_MENU_SERVICE.sql" />
-    <Build Include="dbo\Tables\DROIT_SERVICE.sql" />
     <Build Include="dbo\Tables\EQUIPE.sql" />
     <Build Include="dbo\Tables\EQUIPEMENTFIXE.sql" />
     <Build Include="dbo\Tables\ESVISITES_LOG.sql" />
@@ -163,9 +161,7 @@
     <Build Include="dbo\Tables\GRPEVENEMENT_POSTE.sql" />
     <Build Include="dbo\Tables\GRPSALLE.sql" />
     <Build Include="dbo\Tables\GRPSALLES_SAL.sql" />
-    <Build Include="dbo\Tables\GRPSALLES_SAL_RESSOURCE.sql" />
     <Build Include="dbo\Tables\GRPSALLES_VALIDATION.sql" />
-    <Build Include="dbo\Tables\GRPSALLE_RESSOURCE.sql" />
     <Build Include="dbo\Tables\GRPSITE.sql" />
     <Build Include="dbo\Tables\GRPSITE_MENU.sql" />
     <Build Include="dbo\Tables\GRPSITE_MENU_SITE.sql" />
@@ -207,9 +203,7 @@
     <Build Include="dbo\Tables\LGFACTURE.sql" />
     <Build Include="dbo\Tables\LGPA.sql" />
     <Build Include="dbo\Tables\LGPARTICIPANT.sql" />
-    <Build Include="dbo\Tables\LGPARTICIPANT_RESSOURCE.sql" />
     <Build Include="dbo\Tables\LGRESERVATION.sql" />
-    <Build Include="dbo\Tables\LGRESERVATION_RESSOURCE.sql" />
     <Build Include="dbo\Tables\LGSALLE.sql" />
     <Build Include="dbo\Tables\LICENCE.sql" />
     <Build Include="dbo\Tables\LICENCE1.sql" />
@@ -233,9 +227,6 @@
     <Build Include="dbo\Tables\MARCHE.sql" />
     <Build Include="dbo\Tables\MARQUE.sql" />
     <Build Include="dbo\Tables\MATERIEL.sql" />
-    <Build Include="dbo\Tables\MENU.sql" />
-    <Build Include="dbo\Tables\MENU_RESTAURANT.sql" />
-    <Build Include="dbo\Tables\MENU_SERVICE.sql" />
     <Build Include="dbo\Tables\MISSION.sql" />
     <Build Include="dbo\Tables\MISSIONTEMP.sql" />
     <Build Include="dbo\Tables\MISSION_AGENT.sql" />
@@ -277,8 +268,6 @@
     <Build Include="dbo\Tables\PERSONNE_ACX_LOG.sql" />
     <Build Include="dbo\Tables\PHOTOS.sql" />
     <Build Include="dbo\Tables\PLANS.sql" />
-    <Build Include="dbo\Tables\PLAT.sql" />
-    <Build Include="dbo\Tables\PLAT_MENU.sql" />
     <Build Include="dbo\Tables\POSTE.sql" />
     <Build Include="dbo\Tables\POSTE_CHECKLIST.sql" />
     <Build Include="dbo\Tables\POSTE_TYPEVISITE.sql" />
@@ -289,7 +278,6 @@
     <Build Include="dbo\Tables\PROFIL_CTRL_LECTEUR.sql" />
     <Build Include="dbo\Tables\PROFIL_CTRL_LOCALISATION.sql" />
     <Build Include="dbo\Tables\PXACHAT.sql" />
-    <Build Include="dbo\Tables\PXACHAT_RESSOURCE.sql" />
     <Build Include="dbo\Tables\QPERSONNEL.sql" />
     <Build Include="dbo\Tables\QUALIF.sql" />
     <Build Include="dbo\Tables\RAISON.sql" />
@@ -303,12 +291,9 @@
     <Build Include="dbo\Tables\RENSEIGNEMENT.sql" />
     <Build Include="dbo\Tables\RESERVATION.sql" />
     <Build Include="dbo\Tables\RESERVATIONCELL.sql" />
-    <Build Include="dbo\Tables\RESERVATION_RESSOURCE.sql" />
     <Build Include="dbo\Tables\RESIDANTS.sql" />
     <Build Include="dbo\Tables\RESIDANT_CTRL.sql" />
     <Build Include="dbo\Tables\RESIDANT_SITE_PROFIL.sql" />
-    <Build Include="dbo\Tables\RESSOURCE.sql" />
-    <Build Include="dbo\Tables\RESTAURANT.sql" />
     <Build Include="dbo\Tables\ROI_LOG.sql" />
     <Build Include="dbo\Tables\ROLE_AUTRES.sql" />
     <Build Include="dbo\Tables\ROLE_PARAMETRAGES.sql" />
@@ -692,12 +677,16 @@
     <Build Include="dbo\Tables\RAPPEL_DEFAUT.sql" />
     <Build Include="dbo\Tables\DEVICE_SETTINGS.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+    <None Include="Scripts\Script.Update.Version.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Script_SQL.publish.xml" />
     <None Include="Scripts\Script.Insert.Countries.sql" />
     <None Include="Scripts\Script.Insert.Referent.sql" />
     <None Include="Scripts\Script.Update.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Script_SQL.refactorlog" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)$(OutputPath)Script_SQL.dacpac" "..\..\..\..\Scripts\Master.dacpac"</PostBuildEvent>

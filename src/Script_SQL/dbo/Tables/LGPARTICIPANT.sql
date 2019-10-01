@@ -17,5 +17,6 @@
 	[OPERSONNEID] [varchar](20) NULL,
 	[RPHONE] [varchar](20) NULL,
 	[RMOBILEPHONE] [varchar](20) NULL,
-	[SESA] [varchar](20) NULL
+	[SESA] [varchar](20) NULL, 
+    [ISNOTIFIED] INT NULL DEFAULT 1
 ) ON [PRIMARY]
