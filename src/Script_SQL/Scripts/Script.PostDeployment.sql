@@ -12,9 +12,13 @@ Modèle de script de post-déploiement
 
 /*:on error ignore
 GO*/
+IF ((SELECT COUNT(*) FROM USERS)=0)
+	BEGIN
+		PRINT 'Insertion par défaut'
+		:r .\Script.Insert.Default.sql
+	END
+GO
 
-PRINT 'Insertion par défaut'
-:r .\Script.Insert.Default.sql
 PRINT 'Table de référence'
 :r .\Script.Insert.Referent.sql
 PRINT 'Table de paramétrage'

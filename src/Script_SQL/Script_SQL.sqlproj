@@ -678,15 +678,13 @@
     <Build Include="dbo\Tables\DEVICE_SETTINGS.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
     <None Include="Scripts\Script.Update.Version.sql" />
+    <None Include="Scripts\Script.Insert.Settings.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Script_SQL.publish.xml" />
     <None Include="Scripts\Script.Insert.Countries.sql" />
     <None Include="Scripts\Script.Insert.Referent.sql" />
     <None Include="Scripts\Script.Update.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="Script_SQL.refactorlog" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)$(OutputPath)Script_SQL.dacpac" "..\..\..\..\Scripts\Master.dacpac"</PostBuildEvent>
