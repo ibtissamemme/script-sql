@@ -1,3 +1,35 @@
+#Prerequisites
+#Install-Module -Name PublishDacPac
+
+#Get SqlPackage path
+#$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
+$sqlPackageFileName = Get-SqlPackagePath -Version 110
+
+if (Get-Command sqlcmd -errorAction SilentlyContinue) {
+
+}
+else {
+    Write-Host "sqlcmd command don't exist"
+    Exit-PSHostProcess
+}
+
+if (Get-Command $sqlPackageFileName -errorAction SilentlyContinue) {
+
+}
+else {
+    Write-Host "sqlpackage command don't exist"
+    Exit-PSHostProcess
+}
+
+#Create Output folder
+$path = Get-Location
+if (Test-Path "$path\Output") {
+}
+else {
+    New-Item -Name Output -Path $path -ItemType Directory
+}
+
+#Input command
 Do {
     $mode = Read-Host 'Choose your authentication mode (1 - SQL, 2 - Windows)'
 }
@@ -8,15 +40,6 @@ $dataBase = Read-Host 'Database?'
 if ($null -eq $server) {
     $server = "(local)"
 }
-
-$path = Get-Location
-if (Test-Path "$path\Output") {
-}
-else {
-    New-Item -Name Output -Path $path -ItemType Directory
-}
-
-$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
 
 $login = Read-Host 'Login?'
 
