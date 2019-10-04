@@ -5,7 +5,7 @@
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[LIBELLE_EN] [varchar](30) NULL,
+	[LIBELLE_EN] [varchar](35) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[ID_STATUTCOURSE] ASC

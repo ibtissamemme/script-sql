@@ -3,7 +3,7 @@
 	[LIBELLE] [varchar](50) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
-	[LIBELLE_EN] [varchar](35) NULL,
+	[LIBELLE_EN] [varchar](50) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[NATURECOLISID] ASC
