@@ -30,10 +30,11 @@ else {
 }
 
 #Input command
-Do {
+<# Do {
     $mode = Read-Host 'Choose your authentication mode (1 - SQL, 2 - Windows)'
 }
-Until($mode -eq 1 -Or $mode -eq 2)
+Until($mode -eq 1 -Or $mode -eq 2) #>
+$mode = 1
 $server = Read-Host 'Server? if null = (local)'
 $dataBase = Read-Host 'Database?'
 
