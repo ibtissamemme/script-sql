@@ -1,9 +1,10 @@
 #Prerequisites
-#Install-Module -Name PublishDacPac
+Install-Module -Name PublishDacPac
 
 #Get SqlPackage path
 #$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
-$sqlPackageFileName = Get-SqlPackagePath -Version 120
+$sqlPackageVersion = Select-SqlPackageVersion -PreferredVersion latest
+$sqlPackageFileName = Get-SqlPackagePath -Version $sqlPackageVersion
 
 if (Get-Command sqlcmd -errorAction SilentlyContinue) {
 
