@@ -38,7 +38,7 @@ $mode = 1
 $server = Read-Host 'Server? if null = (local)'
 $dataBase = Read-Host 'Database?'
 
-if ($null -eq $server) {
+if (!$server) {
     $server = "(local)"
 }
 
