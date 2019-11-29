@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DROITSTELEM](
 	[ID_DROITSTELEM] [int] NOT NULL,
 	[LIBELLE] [varchar](35) NULL,
-	[DROITS] [varchar](500) NULL,
+	[DROITS] [varchar](1000) NULL,
 	[SITE_RESIDANT] [int] NULL,
 	[SITE_PREENREG] [int] NULL,
 	[VISITEUR] [varchar](500) NULL,

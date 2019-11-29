@@ -3,7 +3,7 @@
 
 #Get SqlPackage path
 #$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
-$sqlPackageFileName = Get-SqlPackagePath -Version 110
+$sqlPackageFileName = Get-SqlPackagePath -Version 120
 
 if (Get-Command sqlcmd -errorAction SilentlyContinue) {
 

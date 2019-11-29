@@ -25,7 +25,7 @@
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[EXTERNALID] [varchar](15) NULL,
+	[EXTERNALID] [varchar](200) NULL,
 	[PARTICIPANTS] [varchar](1) NULL,
 	[CARDIBOXID] [varchar](15) NULL,
 	[ICONTROLE] [varchar](50) NULL,

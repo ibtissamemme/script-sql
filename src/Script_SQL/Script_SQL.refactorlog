@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="01358f41-186d-4596-896c-a7a7f5f09c2f" ChangeDateTime="10/14/2019 12:22:18">
+    <Property Name="ElementName" Value="[dbo].[GRPSALLE_LGRESERVATION].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GRPSALLE_LGRESERVATION]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="78f276d3-9b6e-4b16-9643-26eabd7f579c" ChangeDateTime="10/14/2019 12:26:28">
+    <Property Name="ElementName" Value="[dbo].[GRPSALLE_LGRESERVATION].[LGCODERESERVATION]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GRPSALLE_LGRESERVATION]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CODELGRESERVATION" />
+  </Operation>
+</Operations>
