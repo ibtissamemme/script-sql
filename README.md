@@ -5,7 +5,7 @@
 
 ## Current Version
 
-5.0.0
+5.0.2
 
 ## Breaking changes
 
@@ -15,7 +15,6 @@ No breaking changes
 
 * Script powershell
     * install les prérequis si non trouvés
-    * vérifie la version de sqlPackage
 
 * Authentification Windows pour la connexion SQL SERVER
 

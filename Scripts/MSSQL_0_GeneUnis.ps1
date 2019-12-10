@@ -1,5 +1,11 @@
 #Prerequisites
-Install-Module -Name PublishDacPac
+if ((Get-Host).Version.Major -ge 5) {
+    Install-Module -Name PublishDacPac
+}
+else {
+    Write-Host "you need to update powershell (version 5.1 minimum)"
+    Exit-PSHostProcess
+}
 
 #Get SqlPackage path
 #$sqlPackageFileName = "${env:ProgramFiles(x86)}\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"
