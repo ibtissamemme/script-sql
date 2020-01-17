@@ -6,7 +6,7 @@
 	[FIN_THEORIQUE] [datetime] NULL,
 	[DEBUT_EFF] [datetime] NULL,
 	[FIN_EFF] [datetime] NULL,
-	[OBSERVATION] [varchar](max) NULL,
+	[OBSERVATION] [nvarchar](max) NULL,
 	[EVENEMENTID] [int] NULL,
 	[MISSIONTEMPID] [int] NULL,
 	[AGENDA_JOURID] [int] NULL,
@@ -16,12 +16,12 @@
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
 	[LIEUID] [int] NULL,
-	[CODESALLE] [varchar](30) NULL,
-	[BATIMENTID] [varchar](14) NULL,
-	[OBSERVATION2] [varchar](max) NULL,
+	[CODESALLE] [nvarchar](30) NULL,
+	[BATIMENTID] [nvarchar](14) NULL,
+	[OBSERVATION2] [nvarchar](max) NULL,
  CONSTRAINT [PK_OJOURNALID] PRIMARY KEY CLUSTERED
 (
 	[OJOURNALID] ASC

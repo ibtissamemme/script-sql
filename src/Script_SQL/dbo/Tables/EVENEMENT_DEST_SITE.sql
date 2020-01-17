@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[EVENEMENT_DEST_SITE](
 	[EVENEMENTID] [int] NULL,
 	[GROUPEDESTID] [int] NULL,
-	[SITEID] [varchar](14) NULL
+	[SITEID] [nvarchar](14) NULL
 ) ON [PRIMARY]

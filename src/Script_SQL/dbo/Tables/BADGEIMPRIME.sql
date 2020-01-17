@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[BADGEIMPRIME](
-	[NOUVEAUNUMERO] [varchar](14) NULL,
-	[STATUT] [varchar](20) NULL,
+	[NOUVEAUNUMERO] [nvarchar](14) NULL,
+	[STATUT] [nvarchar](20) NULL,
 	[DATEMAJ] [datetime] NULL
 ) ON [PRIMARY]

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[BONTRAVAIL](
 	[BONTRAVAILID] [int] NOT NULL,
-	[BTR] [varchar](50) NULL,
-	[SITEID] [varchar](14) NULL,
+	[BTR] [nvarchar](50) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATEVALIDITE] [datetime] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

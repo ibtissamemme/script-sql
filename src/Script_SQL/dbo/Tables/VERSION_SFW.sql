@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[VERSION_SFW](
-	[COMPATIBLE] [varchar](10) NULL,
-	[SCHEMAS] [varchar](10) NULL,
-	[INFO] [varchar](50) NULL,
+	[COMPATIBLE] [nvarchar](10) NULL,
+	[SCHEMAS] [nvarchar](10) NULL,
+	[INFO] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
-	[FORMATDATE] [varchar](10) NULL,
-	[VERSION] [varchar](50) NULL
+	[FORMATDATE] [nvarchar](10) NULL,
+	[VERSION] [nvarchar](50) NULL
 ) ON [PRIMARY]

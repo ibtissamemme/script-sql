@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[POSTE_TYPEVISITE](
-	[NOM_POSTE] [varchar](50) NULL,
+	[NOM_POSTE] [nvarchar](50) NULL,
 	[TYPEVISITEID] [int] NULL
 ) ON [PRIMARY]

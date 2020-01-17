@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[RONDE](
 	[RONDEID] [int] NOT NULL,
 	[NUMERO] [int] NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[SITEID] [varchar](14) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

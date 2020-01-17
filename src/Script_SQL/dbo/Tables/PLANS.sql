@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[PLANS](
-	[PLANID] [varchar](14) NOT NULL,
-	[EXTERNALID] [varchar](24) NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[PLANID] [nvarchar](14) NOT NULL,
+	[EXTERNALID] [nvarchar](24) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[IMAGE] [image] NULL,
 	[OBSERVATION] [image] NULL,
 	[DATECREATION] [datetime] NOT NULL,

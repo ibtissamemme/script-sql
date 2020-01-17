@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[OFICHIER](
 	[OFICHIERID] [int] NOT NULL,
-	[LIBELLE] [varchar](200) NULL,
+	[LIBELLE] [nvarchar](200) NULL,
 	[DOCUMENT] [image] NULL,
 	[TYPEFILE] [int] NULL,
-	[CONTENTTYPE] [varchar](100) NULL,
+	[CONTENTTYPE] [nvarchar](100) NULL,
 	[DATASIZE] [int] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,

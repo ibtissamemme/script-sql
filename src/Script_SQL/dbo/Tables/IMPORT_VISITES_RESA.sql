@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[IMPORT_VISITES_RESA](
-	[ID] [varchar](18) NULL,
-	[RNOM] [varchar](30) NULL,
-	[RPRENOM] [varchar](30) NULL,
-	[RMATRICULE] [varchar](30) NULL,
-	[RCIVILITE] [varchar](30) NULL,
-	[REMAIL] [varchar](70) NULL,
-	[RSOCIETE] [varchar](30) NULL,
-	[REFRESA] [varchar](30) NULL
+	[ID] [nvarchar](18) NULL,
+	[RNOM] [nvarchar](30) NULL,
+	[RPRENOM] [nvarchar](30) NULL,
+	[RMATRICULE] [nvarchar](30) NULL,
+	[RCIVILITE] [nvarchar](30) NULL,
+	[REMAIL] [nvarchar](70) NULL,
+	[RSOCIETE] [nvarchar](30) NULL,
+	[REFRESA] [nvarchar](30) NULL
 ) ON [PRIMARY]

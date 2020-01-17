@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[AMENAGSALLE](
-	[CODESALLE] [varchar](14) NOT NULL,
-	[CODEAMENAGEMENT] [varchar](14) NOT NULL,
+	[CODESALLE] [nvarchar](14) NOT NULL,
+	[CODEAMENAGEMENT] [nvarchar](14) NOT NULL,
 	[CAPACITE] [float] NULL,
 	[PLANIMPLANTATION] [image] NULL,
 	[PREPARATION] [datetime] NULL,

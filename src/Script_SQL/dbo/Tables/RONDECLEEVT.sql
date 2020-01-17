@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[RONDECLEEVT](
 	[RONDECLEEVTID] [int] NOT NULL,
-	[MOTCLE] [varchar](50) NULL,
+	[MOTCLE] [nvarchar](50) NULL,
 	[EVENEMENTID] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

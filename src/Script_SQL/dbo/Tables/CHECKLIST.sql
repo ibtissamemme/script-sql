@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[CHECKLIST](
 	[CHECKLISTID] [int] NOT NULL,
-	[LIBELLE] [varchar](200) NULL,
+	[LIBELLE] [nvarchar](200) NULL,
 	[NUMERO] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[CHKPRISEPOSTE] [int] NULL,

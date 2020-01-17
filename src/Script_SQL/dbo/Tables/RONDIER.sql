@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[RONDIER](
 	[RONDIERID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[SITEID] [varchar](14) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[ETAT] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

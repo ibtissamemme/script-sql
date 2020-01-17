@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[PERIPHERIQUE_POSTE](
 	[PERIPHERIQUEID] [int] NULL,
-	[NOM_POSTE] [varchar](50) NULL,
-	[PORT] [varchar](15) NULL,
+	[NOM_POSTE] [nvarchar](50) NULL,
+	[PORT] [nvarchar](15) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL
 ) ON [PRIMARY]

@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[TARIFSALLE](
-	[CODESALLE] [varchar](14) NOT NULL,
-	[CODETYPETARIF] [varchar](14) NOT NULL,
+	[CODESALLE] [nvarchar](14) NOT NULL,
+	[CODETYPETARIF] [nvarchar](14) NOT NULL,
 	[PRIX] [float] NOT NULL,
-	[CODETVA] [varchar](14) NULL,
+	[CODETVA] [nvarchar](14) NULL,
 	[TAUXTVA] [float] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

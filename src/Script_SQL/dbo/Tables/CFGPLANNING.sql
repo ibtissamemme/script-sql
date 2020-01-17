@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[CFGPLANNING](
-	[USERID] [varchar](14) NOT NULL,
+	[USERID] [nvarchar](14) NOT NULL,
 	[DERNIEREDATE] [datetime] NULL,
 	[PERIODE] [int] NOT NULL,
 	[POSITIONJOUR] [datetime] NULL,
-	[DELEGANT] [varchar](14) NULL,
-	[CODESALLE] [varchar](14) NULL
+	[DELEGANT] [nvarchar](14) NULL,
+	[CODESALLE] [nvarchar](14) NULL
 ) ON [PRIMARY]

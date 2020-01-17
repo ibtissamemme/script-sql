@@ -1,16 +1,16 @@
 ﻿CREATE TABLE [dbo].[LOGDB](
 	[LOGDBID] [int] IDENTITY(1,1) NOT NULL,
-	[QUI] [varchar](50) NULL,
-	[IP] [varchar](50) NULL,
-	[URL] [varchar](250) NULL,
+	[QUI] [nvarchar](50) NULL,
+	[IP] [nvarchar](50) NULL,
+	[URL] [nvarchar](250) NULL,
 	[QUAND] [datetime] NULL,
-	[REQUETE] [varchar](4000) NULL,
-	[LATABLE] [varchar](100) NULL,
-	[ACTION] [varchar](100) NULL,
-	[ID] [varchar](100) NULL,
-	[DONNEES] [varchar](4000) NULL,
-	[SITE] [varchar](50) NULL,
-	[POSTE] [varchar](50) NULL,
+	[REQUETE] [nvarchar](4000) NULL,
+	[LATABLE] [nvarchar](100) NULL,
+	[ACTION] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NULL,
+	[DONNEES] [nvarchar](4000) NULL,
+	[SITE] [nvarchar](50) NULL,
+	[POSTE] [nvarchar](50) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[LOGDBID] ASC

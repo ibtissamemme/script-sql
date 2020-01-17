@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[ZCL05_BADGE](
-	[NUMBADGE] [varchar](50) NULL,
-	[CODEBADGE] [varchar](50) NULL,
+	[NUMBADGE] [nvarchar](50) NULL,
+	[CODEBADGE] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NULL
 ) ON [PRIMARY]

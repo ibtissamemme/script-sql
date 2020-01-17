@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TYPETARIF](
-	[CODETYPETARIF] [varchar](24) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODETYPETARIF] [nvarchar](24) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[COEFICIENT] [float] NULL,
 	[HEUREDEBUT] [datetime] NULL,
 	[HEUREFIN] [datetime] NULL,

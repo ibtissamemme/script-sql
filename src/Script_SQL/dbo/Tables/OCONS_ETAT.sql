@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[OCONS_ETAT](
 	[OCONSIGNEID] [int] NOT NULL,
-	[LIBELLE] [varchar](500) NULL,
+	[LIBELLE] [nvarchar](500) NULL,
 	[PAGE] [int] NULL,
 	[ETAT] [int] NULL,
 	[DATEMAJ] [datetime] NULL,

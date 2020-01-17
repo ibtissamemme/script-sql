@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[OBJVISITE](
 	[OBJVISITEID] [int] NOT NULL,
-	[LIBELLE] [varchar](100) NULL,
+	[LIBELLE] [nvarchar](100) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

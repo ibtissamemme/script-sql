@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TVA](
-	[CODETVA] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](30) NULL,
+	[CODETVA] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](30) NULL,
 	[TAUXTVA] [float] NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

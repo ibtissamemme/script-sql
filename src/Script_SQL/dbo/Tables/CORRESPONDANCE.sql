@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[CORRESPONDANCE](
 	[CORRESID] [int] NOT NULL,
-	[LIBSSRC] [varchar](240) NULL,
-	[RANGSSRC] [varchar](20) NULL,
-	[LIBDST] [varchar](80) NULL,
+	[LIBSSRC] [nvarchar](240) NULL,
+	[RANGSSRC] [nvarchar](20) NULL,
+	[LIBDST] [nvarchar](80) NULL,
 	[CFG_FICHIERID] [int] NULL,
 	[CORRES_RANG] [int] NULL,
 	[DATEMAJ] [datetime] NULL,

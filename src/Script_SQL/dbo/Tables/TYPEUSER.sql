@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TYPEUSER](
 	[USERID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL, 

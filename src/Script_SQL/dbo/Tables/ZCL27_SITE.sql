@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ZCL27_SITE](
 	[ID_SITE] [int] IDENTITY(1,1) NOT NULL,
-	[SITEID] [varchar](14) NULL,
-	[SERVICEURL] [varchar](300) NULL,
+	[SITEID] [nvarchar](14) NULL,
+	[SERVICEURL] [nvarchar](300) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DIRECTIONS](
-	[DIRECTIONID] [varchar](14) NOT NULL,
-	[SOCIETEID] [varchar](14) NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[DIRECTIONID] [nvarchar](14) NOT NULL,
+	[SOCIETEID] [nvarchar](14) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

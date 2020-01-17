@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[COMMANDE](
 	[COMMANDEID] [bigint] IDENTITY(1,1) NOT NULL,
-	[STATUT] [varchar](14) NULL,
-	[PRIXTOTAL] [varchar](50) NULL,
-	[REFERENCE] [varchar](50) NULL,
-	[SITEID] [varchar](14) NULL,
+	[STATUT] [nvarchar](14) NULL,
+	[PRIXTOTAL] [nvarchar](50) NULL,
+	[REFERENCE] [nvarchar](50) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[NUMERO_COMMANDE] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

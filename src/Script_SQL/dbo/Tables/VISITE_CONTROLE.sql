@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[VISITE_CONTROLE](
-	[VISITEID] [varchar](14) NULL,
+	[VISITEID] [nvarchar](14) NULL,
 	[NUMEROVISITE] [int] NULL,
-	[RESIDANTID] [varchar](14) NULL,
+	[RESIDANTID] [nvarchar](14) NULL,
 	[DATEVISITE] [datetime] NULL
 ) ON [PRIMARY]

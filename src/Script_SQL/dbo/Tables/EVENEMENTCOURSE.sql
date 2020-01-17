@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[EVENEMENTCOURSE](
 	[ID_EVENEMENTCOURSE] [int] NOT NULL,
 	[ID_COURSE] [int] NULL,
-	[LIBELLE] [varchar](200) NULL,
+	[LIBELLE] [nvarchar](200) NULL,
 	[DATEHEURE] [datetime] NULL,
-	[USERID] [varchar](14) NULL,
+	[USERID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

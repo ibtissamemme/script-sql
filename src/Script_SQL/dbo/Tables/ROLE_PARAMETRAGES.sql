@@ -13,7 +13,7 @@
 	[REGLES] [int] NULL,
 	[ENVOI_MAIL] [int] NULL,
 	[PROFIL_ACCUEIL] [int] NULL,
-	[CHAMPS_VISITEUR] [varchar](4000) NULL,
+	[CHAMPS_VISITEUR] [nvarchar](4000) NULL,
 	[SECOND_ACCUEIL] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL, 

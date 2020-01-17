@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[FORMULAIRE_MODELE](
 	[FORMULAIRE_MODELEID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[XML] [varchar](4000) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[XML] [nvarchar](4000) NULL,
 	[OFICHIERID_WORD] [int] NULL,
 	[OFICHIERID_EXCEL] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[TYPEVISITEID] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

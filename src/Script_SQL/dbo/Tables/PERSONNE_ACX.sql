@@ -1,12 +1,12 @@
 ﻿CREATE TABLE [dbo].[PERSONNE_ACX](
 	[PERSONNEID] [int] IDENTITY(1,1) NOT NULL,
-	[TYPEPERSONNE] [varchar](20) NULL,
-	[NOM] [varchar](70) NULL,
-	[PRENOM] [varchar](70) NULL,
-	[SESA] [varchar](20) NULL,
+	[TYPEPERSONNE] [nvarchar](20) NULL,
+	[NOM] [nvarchar](70) NULL,
+	[PRENOM] [nvarchar](70) NULL,
+	[SESA] [nvarchar](20) NULL,
 	[JOURFIN] [int] NULL,
-	[MESSAGEFROMACX] [varchar](100) NULL,
-	[SITEID] [varchar](14) NULL,
+	[MESSAGEFROMACX] [nvarchar](100) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATEDEBUT] [datetime] NULL,
@@ -14,8 +14,8 @@
 	[ACCESOK] [int] NULL,
 	[RETOURACX] [int] NULL,
 	[DATEFIN] [datetime] NULL,
-	[NUMSITEACX] [varchar](10) NULL,
-	[SITE] [varchar](40) NULL,
+	[NUMSITEACX] [nvarchar](10) NULL,
+	[SITE] [nvarchar](40) NULL,
  CONSTRAINT [PK_PERSONNEACXID] PRIMARY KEY CLUSTERED
 (
 	[PERSONNEID] ASC

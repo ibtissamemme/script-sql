@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[STATUTCOURSE](
 	[ID_STATUTCOURSE] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[COLOR] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[LIBELLE_EN] [varchar](35) NULL,
+	[LIBELLE_EN] [nvarchar](35) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[ID_STATUTCOURSE] ASC

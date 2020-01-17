@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[SN_DOUBLONS](
-	[DOUBLONID] [varchar](14) NULL,
-	[REMPLACEID] [varchar](14) NULL,
+	[DOUBLONID] [nvarchar](14) NULL,
+	[REMPLACEID] [nvarchar](14) NULL,
 	[NUMTABLE] [int] NULL
 ) ON [PRIMARY]

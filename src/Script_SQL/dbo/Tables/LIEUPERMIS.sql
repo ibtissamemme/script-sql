@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[LIEUPERMIS](
-	[RESIDANTID] [varchar](14) NOT NULL,
-	[CODESALLE] [varchar](14) NOT NULL,
+	[RESIDANTID] [nvarchar](14) NOT NULL,
+	[CODESALLE] [nvarchar](14) NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

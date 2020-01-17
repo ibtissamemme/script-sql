@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[EVENEMENT](
 	[EVENEMENTID] [int] NOT NULL,
-	[LIBELLE] [varchar](40) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
 	[RAPPORTID] [int] NULL,
 	[CONSIGNEID] [int] NULL,
 	[ISRAPPORT] [int] NULL,
@@ -8,7 +8,7 @@
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
 	[DOUBLE_SIGNATURE] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[COLOR] [int] NULL,
 	[GRPEVENEMENTID] [int] NULL,
 PRIMARY KEY CLUSTERED

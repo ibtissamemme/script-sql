@@ -1,3 +1,3 @@
 ﻿CREATE TABLE [dbo].[ZCL00](
-	[NUMEROCLIENT] [varchar](50) NULL
+	[NUMEROCLIENT] [nvarchar](50) NULL
 ) ON [PRIMARY]

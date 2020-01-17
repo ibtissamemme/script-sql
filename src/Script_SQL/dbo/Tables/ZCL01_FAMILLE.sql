@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[ZCL01_FAMILLE](
 	[FAMID] [int] NOT NULL,
-	[LIBELLE] [varchar](24) NULL,
+	[LIBELLE] [nvarchar](24) NULL,
 	[NSMI] [int] NULL
 ) ON [PRIMARY]

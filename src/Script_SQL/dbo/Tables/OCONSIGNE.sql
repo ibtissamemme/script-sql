@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[OCONSIGNE](
 	[OCONSIGNEID] [int] NOT NULL,
-	[LIBELLE] [varchar](500) NULL,
+	[LIBELLE] [nvarchar](500) NULL,
 	[PAGE] [int] NULL,
 	[DATECONS] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[FILE_PDF] [varchar](250) NULL,
-	[SITEID] [varchar](14) NULL,
+	[FILE_PDF] [nvarchar](250) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
  CONSTRAINT [PK_OCONSIGNEID] PRIMARY KEY CLUSTERED
 (

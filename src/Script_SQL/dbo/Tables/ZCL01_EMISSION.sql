@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[ZCL01_EMISSION](
-	[EMI_COD] [varchar](14) NOT NULL,
-	[EMI_DEST1] [varchar](100) NULL,
-	[EMI_DEST2] [varchar](100) NULL,
-	[EMI_DEST3] [varchar](100) NULL,
-	[EMI_DEST4] [varchar](100) NULL,
-	[EMI_DEST5] [varchar](100) NULL,
-	[EMI_OBJET] [varchar](100) NULL,
-	[EMI_TEXTE] [varchar](500) NULL
+	[EMI_COD] [nvarchar](14) NOT NULL,
+	[EMI_DEST1] [nvarchar](100) NULL,
+	[EMI_DEST2] [nvarchar](100) NULL,
+	[EMI_DEST3] [nvarchar](100) NULL,
+	[EMI_DEST4] [nvarchar](100) NULL,
+	[EMI_DEST5] [nvarchar](100) NULL,
+	[EMI_OBJET] [nvarchar](100) NULL,
+	[EMI_TEXTE] [nvarchar](500) NULL
 ) ON [PRIMARY]

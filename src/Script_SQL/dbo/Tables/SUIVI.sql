@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[SUIVI](
 	[SUIVIID] [int] NOT NULL,
-	[LIBELLE] [varchar](40) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
 	[PERSONNELID] [int] NULL,
-	[OBSERVATION] [varchar](800) NULL,
+	[OBSERVATION] [nvarchar](800) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

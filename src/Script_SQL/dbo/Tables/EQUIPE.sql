@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[EQUIPE](
 	[EQUIPEID] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

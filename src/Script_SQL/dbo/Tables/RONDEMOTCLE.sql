@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[RONDEMOTCLE](
 	[RONDEMOTCLEID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
 	[ETAT] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

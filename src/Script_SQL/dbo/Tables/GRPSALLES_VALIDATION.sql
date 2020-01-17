@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[GRPSALLES_VALIDATION](
-	[GRPSALLEID] [varchar](14) NULL,
-	[GRPUSERID] [varchar](14) NULL
+	[GRPSALLEID] [nvarchar](14) NULL,
+	[GRPUSERID] [nvarchar](14) NULL
 ) ON [PRIMARY]

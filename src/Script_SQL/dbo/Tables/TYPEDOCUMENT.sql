@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TYPEDOCUMENT](
 	[TYPEDOCUMENTID] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[PORTEEID] [int] NULL,
 	[OBLIGATOIRE] [int] NULL,
 	[MODIFIABLE] [int] NULL,

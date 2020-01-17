@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[PERSONNE](
 	[PERSONNEID] [int] NOT NULL,
-	[LIBELLE] [varchar](100) NULL,
-	[OBSERVATION] [varchar](250) NULL,
+	[LIBELLE] [nvarchar](100) NULL,
+	[OBSERVATION] [nvarchar](250) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
  CONSTRAINT [PK_PERSONNEID] PRIMARY KEY CLUSTERED
 (
 	[PERSONNEID] ASC

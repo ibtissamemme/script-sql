@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[CFGARTICLESCURRENT](
-	[CODEMARQUE] [varchar](14) NULL,
-	[CODEFAMILLE] [varchar](14) NULL,
-	[CODESOUSFAMILLE] [varchar](14) NULL,
+	[CODEMARQUE] [nvarchar](14) NULL,
+	[CODEFAMILLE] [nvarchar](14) NULL,
+	[CODESOUSFAMILLE] [nvarchar](14) NULL,
 	[QUANTITE] [int] NULL
 ) ON [PRIMARY]

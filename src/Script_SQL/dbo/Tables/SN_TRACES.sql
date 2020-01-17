@@ -1,12 +1,12 @@
 ﻿CREATE TABLE [dbo].[SN_TRACES](
-	[TRACEID] [varchar](14) NOT NULL,
-	[SITEID] [varchar](14) NOT NULL,
+	[TRACEID] [nvarchar](14) NOT NULL,
+	[SITEID] [nvarchar](14) NOT NULL,
 	[DATEECHECCONNEXION] [datetime] NOT NULL,
-	[ADRESSE_IP] [varchar](50) NULL,
-	[NOM_MACHINE] [varchar](50) NULL,
-	[LOGIN] [varchar](50) NULL,
-	[PASSWORD] [varchar](50) NULL,
-	[NUMERO] [varchar](50) NULL,
-	[TYPE_TRACE] [varchar](50) NULL,
+	[ADRESSE_IP] [nvarchar](50) NULL,
+	[NOM_MACHINE] [nvarchar](50) NULL,
+	[LOGIN] [nvarchar](50) NULL,
+	[PASSWORD] [nvarchar](50) NULL,
+	[NUMERO] [nvarchar](50) NULL,
+	[TYPE_TRACE] [nvarchar](50) NULL,
 	[CODE] [int] NULL
 ) ON [PRIMARY]

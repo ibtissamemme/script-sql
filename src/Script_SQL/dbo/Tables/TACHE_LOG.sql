@@ -2,16 +2,16 @@
 	[LOGID] [int] NOT NULL,
 	[TACHEID] [int] NULL,
 	[NUMSESSION] [int] NULL,
-	[USERID] [varchar](14) NULL,
+	[USERID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[FREEFLAG01] [int] NULL,
 	[FREEFLAG02] [int] NULL,
 	[FREEFLAG03] [int] NULL,
 	[FREEFLAG04] [int] NULL,
-	[IDLIGNE] [varchar](14) NULL,
+	[IDLIGNE] [nvarchar](14) NULL,
 	[NIVEAUSECU] [int] NULL,
-	[ROLEUSER] [varchar](20) NULL,
-	[COMMENTAIRE] [varchar](max) NULL,
+	[ROLEUSER] [nvarchar](20) NULL,
+	[COMMENTAIRE] [nvarchar](max) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[LOGID] ASC

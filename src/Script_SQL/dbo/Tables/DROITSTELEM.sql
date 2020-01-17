@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[DROITSTELEM](
 	[ID_DROITSTELEM] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
-	[DROITS] [varchar](1000) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
+	[DROITS] [nvarchar](1000) NULL,
 	[SITE_RESIDANT] [int] NULL,
 	[SITE_PREENREG] [int] NULL,
-	[VISITEUR] [varchar](500) NULL,
+	[VISITEUR] [nvarchar](500) NULL,
 	[TIMEOUT] [int] NULL,
 	[GRPVALIDEURID] [int] NULL,
 	[ETRANGER] [int] NULL,

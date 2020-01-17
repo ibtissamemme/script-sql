@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[RAPPEL](
 	[RAPPELID] [int] IDENTITY(1,1) NOT NULL,
-	[CODELGRESERVATION] [varchar](14) NULL,
-	[TEMPS] [varchar](50) NULL,
-	[UNITE] [varchar](50) NULL,
+	[CODELGRESERVATION] [nvarchar](14) NULL,
+	[TEMPS] [nvarchar](50) NULL,
+	[UNITE] [nvarchar](50) NULL,
 	[DATERAPPEL] [datetime] NULL,
 	[ETAT] [int] NULL,
 	[DATECREATION] [datetime] NULL,

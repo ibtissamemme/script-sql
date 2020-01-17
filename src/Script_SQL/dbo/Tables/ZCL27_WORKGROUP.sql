@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[ZCL27_WORKGROUP](
 	[ID_WORKGROUP] [int] IDENTITY(1,1) NOT NULL,
-	[WG_NAME] [varchar](40) NULL,
-	[WG_ID] [varchar](20) NULL,
-	[SITEID] [varchar](14) NULL,
+	[WG_NAME] [nvarchar](40) NULL,
+	[WG_ID] [nvarchar](20) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

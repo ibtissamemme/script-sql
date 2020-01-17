@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[ZCL08_REPAS](
-	[REPASID] [varchar](14) NULL,
-	[REPAS] [varchar](10) NULL,
-	[NUMEROBADGE] [varchar](20) NOT NULL,
-	[DATEPASSAGE] [varchar](20) NULL,
-	[DATEPASSAGE2] [varchar](20) NOT NULL,
-	[VISITEID] [varchar](14) NULL,
+	[REPASID] [nvarchar](14) NULL,
+	[REPAS] [nvarchar](10) NULL,
+	[NUMEROBADGE] [nvarchar](20) NOT NULL,
+	[DATEPASSAGE] [nvarchar](20) NULL,
+	[DATEPASSAGE2] [nvarchar](20) NOT NULL,
+	[VISITEID] [nvarchar](14) NULL,
 	[DATEREELLE] [datetime] NULL,
  CONSTRAINT [PK_BDG] PRIMARY KEY CLUSTERED
 (

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[DROITSTAXI](
 	[ID_DROITSTAXI] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[DROITS] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

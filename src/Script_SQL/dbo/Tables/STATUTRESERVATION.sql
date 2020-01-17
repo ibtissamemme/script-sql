@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[STATUTRESERVATION](
-	[CODESTATUT] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODESTATUT] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[COLOR] [int] NULL,
-	[COLORNAME] [varchar](30) NULL,
+	[COLORNAME] [nvarchar](30) NULL,
 	[RETROCESSIBLE] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
@@ -12,7 +12,7 @@
 	[NBJOURAD] [int] NULL,
 	[NBJOURAR] [int] NULL,
 	[NBJOURDELAI] [int] NULL,
-	[LIBELLE_EN] [varchar](35) NULL,
+	[LIBELLE_EN] [nvarchar](35) NULL,
  CONSTRAINT [PK_CODESTATUT] PRIMARY KEY CLUSTERED
 (
 	[CODESTATUT] ASC

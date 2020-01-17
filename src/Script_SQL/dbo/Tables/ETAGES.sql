@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ETAGES](
-	[ETAGEID] [varchar](14) NOT NULL,
-	[BATIMENTID] [varchar](14) NULL,
-	[ETAGE] [varchar](7) NULL,
+	[ETAGEID] [nvarchar](14) NOT NULL,
+	[BATIMENTID] [nvarchar](14) NULL,
+	[ETAGE] [nvarchar](7) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

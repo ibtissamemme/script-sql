@@ -1,13 +1,13 @@
 ﻿/****** Object:  Table [dbo].[CONFERENCE]    Script Date: 7/26/2018 16:14:49 ******/
 CREATE TABLE [dbo].[CONFERENCE](
 	[CONFERENCEID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[DESCRIPTION] [varchar](4000) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[DESCRIPTION] [nvarchar](4000) NULL,
 	[STARTDATE] [date] NULL,
 	[ENDDATE] [date] NULL,
-	[TICKET] [varchar](50) NULL,
-	[BADGEID] [varchar](14) NULL,
-	[SITEID] [varchar](14) NULL,
+	[TICKET] [nvarchar](50) NULL,
+	[BADGEID] [nvarchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[OFICHIERID] [int] NULL,
 	[DATECREATION] [date] NULL,
 	[DATEMAJ] [date] NULL,

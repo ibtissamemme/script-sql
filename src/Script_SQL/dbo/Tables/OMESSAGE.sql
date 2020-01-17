@@ -4,10 +4,10 @@
 	[DATERAPPEL] [datetime] NULL,
 	[DATEFIN] [datetime] NULL,
 	[ETAT] [int] NULL,
-	[MESSAGE] [varchar](1000) NULL,
+	[MESSAGE] [nvarchar](1000) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
  CONSTRAINT [PK_OMESSAGEID] PRIMARY KEY CLUSTERED
 (

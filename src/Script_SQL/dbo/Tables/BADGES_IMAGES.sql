@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[BADGES_IMAGES](
-	[BADGES_IMAGEID] [varchar](14) NOT NULL,
+	[BADGES_IMAGEID] [nvarchar](14) NOT NULL,
 	[IMAGE] [image] NULL,
-	[CONTENTTYPE] [varchar](50) NULL,
-	[SOURCEFILENAME] [varchar](100) NULL,
+	[CONTENTTYPE] [nvarchar](50) NULL,
+	[SOURCEFILENAME] [nvarchar](100) NULL,
 	[DATASIZE] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

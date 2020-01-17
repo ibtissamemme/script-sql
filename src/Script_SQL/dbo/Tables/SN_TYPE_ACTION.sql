@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[SN_TYPE_ACTION](
-	[ACTIONID] [varchar](14) NOT NULL,
-	[ACTION] [varchar](50) NULL
+	[ACTIONID] [nvarchar](14) NOT NULL,
+	[ACTION] [nvarchar](50) NULL
 ) ON [PRIMARY]

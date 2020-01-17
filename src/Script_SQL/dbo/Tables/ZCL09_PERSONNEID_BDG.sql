@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[ZCL09_PERSONNEID_BDG](
-	[PERSONNEID] [varchar](14) NULL,
-	[NUMEROBADGE] [varchar](50) NULL
+	[PERSONNEID] [nvarchar](14) NULL,
+	[NUMEROBADGE] [nvarchar](50) NULL
 ) ON [PRIMARY]

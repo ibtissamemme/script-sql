@@ -1,16 +1,16 @@
 ﻿CREATE TABLE [dbo].[PASSAGERTAXI](
 	[ID_PASSAGERTAXI] [int] NOT NULL,
 	[ID_COURSE] [int] NULL,
-	[RESIDANTID] [varchar](14) NULL,
-	[INTERLOCUTEURID] [varchar](14) NULL,
-	[CONTACT] [varchar](200) NULL,
-	[HANDICAP] [varchar](200) NULL,
-	[ANIMAL] [varchar](200) NULL,
+	[RESIDANTID] [nvarchar](14) NULL,
+	[INTERLOCUTEURID] [nvarchar](14) NULL,
+	[CONTACT] [nvarchar](200) NULL,
+	[HANDICAP] [nvarchar](200) NULL,
+	[ANIMAL] [nvarchar](200) NULL,
 	[ORDRE] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[DEMANDEUR] [varchar](14) NULL,
+	[DEMANDEUR] [nvarchar](14) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[ID_PASSAGERTAXI] ASC

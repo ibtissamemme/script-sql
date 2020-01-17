@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[GRPEVENEMENT](
 	[GRPEVENEMENTID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

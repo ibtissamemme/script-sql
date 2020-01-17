@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[SN_TYPE_TRACE](
 	[CODE] [int] NULL,
-	[LIBELLE] [varchar](50) NULL
+	[LIBELLE] [nvarchar](50) NULL
 ) ON [PRIMARY]

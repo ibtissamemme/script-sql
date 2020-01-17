@@ -1,14 +1,14 @@
 ﻿CREATE TABLE [dbo].[VISITES_EXT](
-	[VISITES_EXTID] [varchar](14) NULL,
-	[FREE1] [varchar](50) NULL,
-	[FREE2] [varchar](50) NULL,
-	[FREE3] [varchar](50) NULL,
-	[FREE4] [varchar](50) NULL,
-	[FREE5] [varchar](50) NULL,
-	[FREE6] [varchar](50) NULL,
-	[FREE7] [varchar](50) NULL,
-	[FREE8] [varchar](50) NULL,
-	[FREE9] [varchar](50) NULL,
-	[FREE10] [varchar](50) NULL,
-	[MARCHEID] [varchar](14) NULL
+	[VISITES_EXTID] [nvarchar](14) NULL,
+	[FREE1] [nvarchar](50) NULL,
+	[FREE2] [nvarchar](50) NULL,
+	[FREE3] [nvarchar](50) NULL,
+	[FREE4] [nvarchar](50) NULL,
+	[FREE5] [nvarchar](50) NULL,
+	[FREE6] [nvarchar](50) NULL,
+	[FREE7] [nvarchar](50) NULL,
+	[FREE8] [nvarchar](50) NULL,
+	[FREE9] [nvarchar](50) NULL,
+	[FREE10] [nvarchar](50) NULL,
+	[MARCHEID] [nvarchar](14) NULL
 ) ON [PRIMARY]

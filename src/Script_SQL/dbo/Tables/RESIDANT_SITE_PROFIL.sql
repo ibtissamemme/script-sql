@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[RESIDANT_SITE_PROFIL](
-	[RESIDANTID] [varchar](14) NULL,
-	[SITEID] [varchar](14) NULL,
+	[RESIDANTID] [nvarchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[PROFIL_CTRLID] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

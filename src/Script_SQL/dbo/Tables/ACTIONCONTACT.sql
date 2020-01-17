@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ACTIONCONTACT](
-	[CODEACTIONCONTACT] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODEACTIONCONTACT] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL

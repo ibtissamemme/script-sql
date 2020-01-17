@@ -1,12 +1,12 @@
 ﻿CREATE TABLE [dbo].[SOUSMENU_SERVICE](
 	[SOUSMENU_SERVICEID] [int] IDENTITY(1,1) NOT NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[MENU_SERVICEID] [int] NULL,
-	[LIBELLE_FR] [varchar](100) NULL,
-	[LIBELLE_EN] [varchar](100) NULL,
+	[LIBELLE_FR] [nvarchar](100) NULL,
+	[LIBELLE_EN] [nvarchar](100) NULL,
 	[ORDRE] [int] NULL,
-	[TEXTE_FR] [varchar](max) NULL,
-	[TEXTE_EN] [varchar](max) NULL,
+	[TEXTE_FR] [nvarchar](max) NULL,
+	[TEXTE_EN] [nvarchar](max) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[SOUSMENU_SERVICEID] ASC

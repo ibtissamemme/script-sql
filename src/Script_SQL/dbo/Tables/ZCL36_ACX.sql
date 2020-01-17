@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[ZCL36_ACX](
 	[ZCL36_ACXID] [int] NOT NULL,
-	[LIBELLE] [varchar](30) NULL,
-	[IP] [varchar](15) NULL,
+	[LIBELLE] [nvarchar](30) NULL,
+	[IP] [nvarchar](15) NULL,
 	[PORT] [int] NULL,
-	[MDP] [varchar](20) NULL,
+	[MDP] [nvarchar](20) NULL,
 	[STATUT] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 PRIMARY KEY CLUSTERED

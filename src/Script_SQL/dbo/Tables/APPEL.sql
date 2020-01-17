@@ -1,14 +1,14 @@
 ﻿CREATE TABLE [dbo].[APPEL] (
 	[APPELID] [int] IDENTITY(1, 1) NOT NULL
-	,[USERID] [varchar](14) NULL
+	,[USERID] [nvarchar](14) NULL
 	,[QUAND] [datetime] NULL
-	,[SITEID] [varchar](14) NULL
-	,[NOM_POSTE] [varchar](50) NULL
-	,[RESIDANTID] [varchar](14) NULL
-	,[INTERLOCUTEURID] [varchar](14) NULL
-	,[SOCIETE] [varchar](35) NULL
-	,[OBJET] [varchar](4000) NULL
-	,[TELEPHONE] [varchar](30) NULL
+	,[SITEID] [nvarchar](14) NULL
+	,[NOM_POSTE] [nvarchar](50) NULL
+	,[RESIDANTID] [nvarchar](14) NULL
+	,[INTERLOCUTEURID] [nvarchar](14) NULL
+	,[SOCIETE] [nvarchar](35) NULL
+	,[OBJET] [nvarchar](4000) NULL
+	,[TELEPHONE] [nvarchar](30) NULL
 	,[DATECREATION] [datetime] NULL
 	,PRIMARY KEY CLUSTERED ([APPELID] ASC) WITH (
 		PAD_INDEX = OFF

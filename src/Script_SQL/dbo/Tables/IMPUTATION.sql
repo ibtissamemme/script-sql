@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[IMPUTATION](
-	[IMPUTATIONID] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
-	[LIBELLE2] [varchar](35) NULL,
-	[IMPUTATION_TYPEID] [varchar](14) NULL,
+	[IMPUTATIONID] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
+	[LIBELLE2] [nvarchar](35) NULL,
+	[IMPUTATION_TYPEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

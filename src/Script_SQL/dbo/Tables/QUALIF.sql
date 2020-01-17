@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[QUALIF](
 	[QUALIFID] [int] NOT NULL,
-	[LIBELLE] [varchar](20) NULL,
+	[LIBELLE] [nvarchar](20) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[SECRETARIAT](
-	[RESIDANTID2] [varchar](14) NOT NULL,
-	[RESIDANTID] [varchar](14) NOT NULL,
-	[RELATION] [varchar](15) NULL,
+	[RESIDANTID2] [nvarchar](14) NOT NULL,
+	[RESIDANTID] [nvarchar](14) NOT NULL,
+	[RELATION] [nvarchar](15) NULL,
 	[RELATIONID] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

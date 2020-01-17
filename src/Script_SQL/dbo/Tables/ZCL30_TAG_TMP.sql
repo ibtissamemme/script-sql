@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[ZCL30_TAG_TMP](
 	[ZCL30_TAG_TMPID] [int] IDENTITY(1,1) NOT NULL,
-	[BASE] [varchar](30) NULL,
-	[PORTATIF] [varchar](30) NULL,
-	[TAG] [varchar](30) NULL,
+	[BASE] [nvarchar](30) NULL,
+	[PORTATIF] [nvarchar](30) NULL,
+	[TAG] [nvarchar](30) NULL,
 	[DATEHEURE] [datetime] NULL,
 	[ORONDEID] [int] NULL,
  CONSTRAINT [PK_ZCL30_TAG_TMP] PRIMARY KEY CLUSTERED

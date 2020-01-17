@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[RAPPORT](
 	[RAPPORTID] [int] NOT NULL,
-	[LIBELLE] [varchar](40) NULL,
-	[NOMTABLE] [varchar](50) NULL,
-	[DETAILS] [varchar](6000) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
+	[NOMTABLE] [nvarchar](50) NULL,
+	[DETAILS] [nvarchar](6000) NULL,
 	[AUTEURID] [int] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
 	[TYPERAPPORT] [int] NULL,
  CONSTRAINT [PK_RAPPORTID] PRIMARY KEY CLUSTERED

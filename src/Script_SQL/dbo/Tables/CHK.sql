@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[CHK](
 	[CHKID] [int] NOT NULL,
-	[LIBELLE] [varchar](400) NULL,
+	[LIBELLE] [nvarchar](400) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

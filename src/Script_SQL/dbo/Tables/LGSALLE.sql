@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[LGSALLE](
-	[CODESALLE] [varchar](14) NOT NULL,
-	[CODEEQUIPEMENTFIXE] [varchar](14) NOT NULL,
+	[CODESALLE] [nvarchar](14) NOT NULL,
+	[CODEEQUIPEMENTFIXE] [nvarchar](14) NOT NULL,
 	[QUANTITE] [int] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

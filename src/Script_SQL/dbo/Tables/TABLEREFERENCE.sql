@@ -2,9 +2,9 @@
 	[TABLEREFERENCEID] [int] NULL,
 	[ID] [int] NULL,
 	[VALEUR] [int] NULL,
-	[TEXTE] [varchar](100) NULL,
-	[TEXTE_FR] [varchar](100) NULL,
-	[TEXTE_EN] [varchar](100) NULL,
+	[TEXTE] [nvarchar](100) NULL,
+	[TEXTE_FR] [nvarchar](100) NULL,
+	[TEXTE_EN] [nvarchar](100) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL

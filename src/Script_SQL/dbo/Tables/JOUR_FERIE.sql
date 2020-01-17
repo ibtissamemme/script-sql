@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[JOUR_FERIE](
 	[JOUR_FERIEID] [int] NOT NULL,
-	[LIBELLE] [varchar](100) NULL,
+	[LIBELLE] [nvarchar](100) NULL,
 	[DEBUT] [datetime] NULL,
 	[FIN] [datetime] NULL,
 	[DATECREATION] [datetime] NOT NULL,

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[GRPSITE](
-	[GRPSITEID] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
+	[GRPSITEID] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[DEPARTEMENT](
-	[DEPTID] [varchar](14) NOT NULL,
-	[SOCIETEID] [varchar](14) NULL,
-	[EXTERNALID] [varchar](24) NULL,
-	[LIBELLE] [varchar](40) NULL,
+	[DEPTID] [nvarchar](14) NOT NULL,
+	[SOCIETEID] [nvarchar](14) NULL,
+	[EXTERNALID] [nvarchar](24) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
 	[OBSERVATION] [image] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SOCBAT](
-	[BATIMENTID] [varchar](14) NOT NULL,
-	[SOCIETEID] [varchar](14) NOT NULL,
+	[BATIMENTID] [nvarchar](14) NOT NULL,
+	[SOCIETEID] [nvarchar](14) NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

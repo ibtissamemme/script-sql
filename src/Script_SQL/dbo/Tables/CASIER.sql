@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[CASIER](
 	[CASIERID] [int] NOT NULL,
-	[BOITE] [varchar](6) NULL,
-	[CASIER] [varchar](6) NULL,
-	[STATUTCASIER] [varchar](1) NULL,
+	[BOITE] [nvarchar](6) NULL,
+	[CASIER] [nvarchar](6) NULL,
+	[STATUTCASIER] [nvarchar](1) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

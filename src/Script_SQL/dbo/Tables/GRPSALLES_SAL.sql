@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[GRPSALLES_SAL](
-	[GRPSALLEID] [varchar](14) NULL,
-	[SALLEID] [varchar](14) NULL
+	[GRPSALLEID] [nvarchar](14) NULL,
+	[SALLEID] [nvarchar](14) NULL
 ) ON [PRIMARY]

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[WEBPLANNING](
 	[DATEBEGIN] [datetime] NOT NULL,
 	[DATEEND] [datetime] NOT NULL,
-	[IMAGEPATH] [varchar](80) NULL,
+	[IMAGEPATH] [nvarchar](80) NULL,
 PRIMARY KEY CLUSTERED
 (
 	[DATEBEGIN] ASC,

@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[ZCL05_ASCENSEUR](
-	[LIBELLE] [varchar](50) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
 	[DATECREATION] [datetime] NULL
 ) ON [PRIMARY]

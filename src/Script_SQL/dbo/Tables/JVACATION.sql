@@ -5,7 +5,7 @@
 	[OUVERTURE] [datetime] NULL,
 	[FERMETUREID] [int] NULL,
 	[FERMETURE] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
  CONSTRAINT [PK_CJVACATIONID] PRIMARY KEY CLUSTERED
 (

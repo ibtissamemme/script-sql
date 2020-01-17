@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[ZCL30_EVT](
 	[ZCL30_EVTID] [int] IDENTITY(1,1) NOT NULL,
-	[BASE] [varchar](30) NULL,
-	[PORTATIF] [varchar](30) NULL,
-	[CODE_EVT] [varchar](30) NULL,
+	[BASE] [nvarchar](30) NULL,
+	[PORTATIF] [nvarchar](30) NULL,
+	[CODE_EVT] [nvarchar](30) NULL,
 	[DATEHEURE] [datetime] NULL,
  CONSTRAINT [PK_ZCL30_EVT] PRIMARY KEY CLUSTERED
 (

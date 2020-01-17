@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[DEDUP_DEDUP](
-	[DEDUP1ID] [varchar](14) NOT NULL,
-	[DEDUP2ID] [varchar](14) NOT NULL,
-	[SIMIL_FLAG] [varchar](1) NULL,
-	[ENTITE] [varchar](50) NULL,
+	[DEDUP1ID] [nvarchar](14) NOT NULL,
+	[DEDUP2ID] [nvarchar](14) NOT NULL,
+	[SIMIL_FLAG] [nvarchar](1) NULL,
+	[ENTITE] [nvarchar](50) NULL,
 	[JW] [int] NULL,
  CONSTRAINT [PK_DEDUP_DEDUPID] PRIMARY KEY CLUSTERED
 (

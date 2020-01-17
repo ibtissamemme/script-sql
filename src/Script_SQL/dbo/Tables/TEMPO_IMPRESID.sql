@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[TEMPO_IMPRESID](
-	[RESIDANTID] [varchar](14) NULL,
-	[SITEID] [varchar](40) NULL
+	[RESIDANTID] [nvarchar](14) NULL,
+	[SITEID] [nvarchar](40) NULL
 ) ON [PRIMARY]

@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[VACATION](
 	[VACATIONID] [int] NOT NULL,
-	[JOUR_SEM] [varchar](20) NULL,
-	[VSERVICE] [varchar](40) NULL,
+	[JOUR_SEM] [nvarchar](20) NULL,
+	[VSERVICE] [nvarchar](40) NULL,
 	[HEURE_DEBUT] [datetime] NULL,
 	[HEURE_FIN] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
 	[CL] [int] NULL,
  CONSTRAINT [PK_VACATIONID] PRIMARY KEY CLUSTERED

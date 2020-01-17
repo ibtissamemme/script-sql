@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[LIGNE_COMMANDE_EVENEMENT](
 	[LIGNE_COMMANDE_EVENEMENTID] [bigint] IDENTITY(1,1) NOT NULL,
 	[LIGNE_COMMANDEID] [int] NULL,
-	[LIBELLE] [varchar](max) NULL,
-	[STATUT] [varchar](14) NULL,
+	[LIBELLE] [nvarchar](max) NULL,
+	[STATUT] [nvarchar](14) NULL,
 	[DATEHEURE] [datetime] NULL,
-	[RESIDANTID] [varchar](14) NULL,
+	[RESIDANTID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 PRIMARY KEY CLUSTERED

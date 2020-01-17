@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[TAG](
 	[TAGID] [int] NOT NULL,
-	[TAG] [varchar](35) NULL,
-	[DESCRIPTION] [varchar](100) NULL,
+	[TAG] [nvarchar](35) NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
 	[TYPE_TAG] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 PRIMARY KEY CLUSTERED

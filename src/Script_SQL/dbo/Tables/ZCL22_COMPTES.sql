@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ZCL22_COMPTES](
-	[NAME] [varchar](20) NOT NULL,
-	[PASSWORD] [varchar](20) NULL,
+	[NAME] [nvarchar](20) NOT NULL,
+	[PASSWORD] [nvarchar](20) NULL,
 	[ETAT] [int] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,

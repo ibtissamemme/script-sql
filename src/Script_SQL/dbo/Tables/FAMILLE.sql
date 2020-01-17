@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[FAMILLE](
-	[CODEFAMILLE] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODEFAMILLE] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[REMARQUES] [image] NULL,
 	[LISTEPRIX] [int] NULL,
 	[IMAGE] [image] NULL,
@@ -10,13 +10,13 @@
 	[DATESYNCHRO] [datetime] NULL,
 	[AFF_GESROOM] [int] NULL,
 	[AFF_SERVICE] [int] NULL,
-	[MENU] [varchar](100) NULL,
+	[MENU] [nvarchar](100) NULL,
 	[TYPE] [int] NULL,
-	[TIMESTART] [varchar](8) NULL,
-	[TIMEEND] [varchar](8) NULL,
-	[TIMESTARTEDIT] [varchar](8) NULL,
-	[TIMEENDEDIT] [varchar](8) NULL,
-	[LIBELLEEN] [varchar](35) NULL,
+	[TIMESTART] [nvarchar](8) NULL,
+	[TIMEEND] [nvarchar](8) NULL,
+	[TIMESTARTEDIT] [nvarchar](8) NULL,
+	[TIMEENDEDIT] [nvarchar](8) NULL,
+	[LIBELLEEN] [nvarchar](35) NULL,
  CONSTRAINT [PK_CODEFAMILLE] PRIMARY KEY CLUSTERED
 (
 	[CODEFAMILLE] ASC

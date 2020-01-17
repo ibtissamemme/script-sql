@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[ZCL35_LECTEUR](
 	[ZCL35_LECTEURID] [int] NOT NULL,
-	[IP] [varchar](15) NULL,
+	[IP] [nvarchar](15) NULL,
 	[PORT] [int] NOT NULL,
-	[MDP] [varchar](20) NULL,
+	[MDP] [nvarchar](20) NULL,
 	[STATUT] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 PRIMARY KEY CLUSTERED

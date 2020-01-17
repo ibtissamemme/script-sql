@@ -1,16 +1,16 @@
 ﻿CREATE TABLE [dbo].[NATURE](
-	[NATUREID] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
-	[ABREGE] [varchar](6) NULL,
-	[TVISITE] [varchar](1) NULL,
-	[PROFIL] [varchar](20) NULL,
-	[INTERDIT] [varchar](1) NULL,
+	[NATUREID] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
+	[ABREGE] [nvarchar](6) NULL,
+	[TVISITE] [nvarchar](1) NULL,
+	[PROFIL] [nvarchar](20) NULL,
+	[INTERDIT] [nvarchar](1) NULL,
 	[DEBUTINTERDIT] [datetime] NULL,
 	[FININTERDIT] [datetime] NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[LIBELLE_EN] [varchar](35) NULL,
+	[LIBELLE_EN] [nvarchar](35) NULL,
  CONSTRAINT [PK_NATUREID] PRIMARY KEY CLUSTERED
 (
 	[NATUREID] ASC

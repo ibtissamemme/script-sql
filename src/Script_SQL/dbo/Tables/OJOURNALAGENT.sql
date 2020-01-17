@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[OJOURNALAGENT](
 	[OJOURNALID] [int] NULL,
 	[PERSONNELID] [int] NULL,
-	[NOMPRENOM] [varchar](50) NULL
+	[NOMPRENOM] [nvarchar](50) NULL
 ) ON [PRIMARY]

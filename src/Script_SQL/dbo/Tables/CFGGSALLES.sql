@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[CFGGSALLES](
-	[SITE] [varchar](30) NULL,
+	[SITE] [nvarchar](30) NULL,
 	[NETTOYAGE] [int] NULL,
-	[E_EMAIL] [varchar](15) NULL,
-	[E_HOST] [varchar](50) NULL,
-	[E_REPERTOIRE] [varchar](50) NULL,
-	[E_USERID] [varchar](50) NULL,
+	[E_EMAIL] [nvarchar](15) NULL,
+	[E_HOST] [nvarchar](50) NULL,
+	[E_REPERTOIRE] [nvarchar](50) NULL,
+	[E_USERID] [nvarchar](50) NULL,
 	[E_DESTINATAIRE] [int] NULL
 ) ON [PRIMARY]

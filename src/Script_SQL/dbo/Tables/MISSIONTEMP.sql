@@ -3,8 +3,8 @@
 	[DUREE] [datetime] NULL,
 	[TOLERANCE] [datetime] NULL,
 	[TYPE_MISSIONID] [int] NULL,
-	[LIBELLE] [varchar](40) NULL,
-	[DESCRIPTION] [varchar](1000) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
+	[DESCRIPTION] [nvarchar](1000) NULL,
 	[PRIORITE] [int] NULL,
 	[QUALIFID] [int] NULL,
 	[DOUBLE_SIGNATURE] [int] NULL,
@@ -19,7 +19,7 @@
 	[DATESYNCHRO] [datetime] NULL,
 	[RAPPORTID] [int] NULL,
 	[ISRAPPORT] [int] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
  CONSTRAINT [PK_MISSIONTEMPID] PRIMARY KEY CLUSTERED
 (
 	[MISSIONTEMPID] ASC

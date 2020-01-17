@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[ZCL27_BADGE](
 	[ID_BADGE] [int] IDENTITY(1,1) NOT NULL,
-	[B_CARD_NO] [varchar](20) NULL,
+	[B_CARD_NO] [nvarchar](20) NULL,
 	[B_ASSIGNED] [int] NULL,
-	[CARDQUALITY] [varchar](14) NULL,
-	[SITEID] [varchar](14) NULL,
+	[CARDQUALITY] [nvarchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

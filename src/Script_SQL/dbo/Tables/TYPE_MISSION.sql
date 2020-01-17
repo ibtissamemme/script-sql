@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[TYPE_MISSION](
 	[TYPE_MISSIONID] [int] NOT NULL,
-	[LIBELLE] [varchar](40) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,
-	[SITEID] [varchar](14) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[POSTEID] [int] NULL,
  CONSTRAINT [PK_TYPE_MISSIONID] PRIMARY KEY CLUSTERED
 (

@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[VISITES_ES](
-	[VISITEID] [varchar](14) NOT NULL,
+	[VISITEID] [nvarchar](14) NOT NULL,
 	[DATEHEUREENTREE] [datetime] NULL,
 	[DATEHEURESORTIE] [datetime] NULL,
 	[DATEHEUREENTREEPARKING] [datetime] NULL,
 	[DATEHEURESORTIEPARKING] [datetime] NULL,
-	[STATUTPARKING] [varchar](20) NULL,
-	[PARKING] [varchar](35) NULL
+	[STATUTPARKING] [nvarchar](20) NULL,
+	[PARKING] [nvarchar](35) NULL
 ) ON [PRIMARY]

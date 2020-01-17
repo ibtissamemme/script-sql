@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[MARQUE](
-	[CODEMARQUE] [varchar](14) NOT NULL,
-	[SOCIETEID] [varchar](14) NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODEMARQUE] [nvarchar](14) NOT NULL,
+	[SOCIETEID] [nvarchar](14) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[REMARQUES] [image] NULL,
 	[IMAGE] [image] NULL,
 	[DATECREATION] [datetime] NOT NULL,

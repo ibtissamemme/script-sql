@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[JOUR](
 	[JOURID] [int] NOT NULL,
-	[LIBELLE] [varchar](40) NULL,
-	[TYPE_JOUR] [varchar](40) NULL,
+	[LIBELLE] [nvarchar](40) NULL,
+	[TYPE_JOUR] [nvarchar](40) NULL,
 	[CL] [int] NULL,
 	[DEBUT_VALIDITE] [datetime] NULL,
 	[FIN_VALIDITE] [datetime] NULL,

@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[BUREAUX] (
-	[BUREAUID] [varchar](14) NOT NULL
-	,[ETAGEID] [varchar](14) NOT NULL
+	[BUREAUID] [nvarchar](14) NOT NULL
+	,[ETAGEID] [nvarchar](14) NOT NULL
 	,[SORTORDER] [int] NULL
-	,[BUREAU] [varchar](15) NOT NULL
+	,[BUREAU] [nvarchar](15) NOT NULL
 	,[DATECREATION] [datetime] NOT NULL
 	,[DATEMAJ] [datetime] NOT NULL
 	,[DATESYNCHRO] [datetime] NULL

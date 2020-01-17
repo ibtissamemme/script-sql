@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SOCSITE](
-	[SOCIETEID] [varchar](14) NOT NULL,
-	[SITEID] [varchar](14) NOT NULL,
+	[SOCIETEID] [nvarchar](14) NOT NULL,
+	[SITEID] [nvarchar](14) NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

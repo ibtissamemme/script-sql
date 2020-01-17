@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[TEMPSOC](
-	[TMPID] [varchar](14) NOT NULL,
-	[TMPNOM] [varchar](35) NOT NULL,
+	[TMPID] [nvarchar](14) NOT NULL,
+	[TMPNOM] [nvarchar](35) NOT NULL,
 	[TMPRANG] [int] NULL,
-	[TRAITE] [varchar](1) NULL,
+	[TRAITE] [nvarchar](1) NULL,
  CONSTRAINT [PK_TMPID] PRIMARY KEY CLUSTERED
 (
 	[TMPID] ASC

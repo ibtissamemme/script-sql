@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[USER_GRPS](
-	[USERID] [varchar](14) NULL,
-	[GRPSALLEID] [varchar](14) NULL
+	[USERID] [nvarchar](14) NULL,
+	[GRPSALLEID] [nvarchar](14) NULL
 ) ON [PRIMARY]

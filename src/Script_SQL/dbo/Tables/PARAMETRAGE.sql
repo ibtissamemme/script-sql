@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[PARAMETRAGE](
-	[LIBELLE] [varchar](50) NOT NULL,
-	[VALEUR] [varchar](max) NULL,
-	[SITEID] [varchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](50) NOT NULL,
+	[VALEUR] [nvarchar](max) NULL,
+	[SITEID] [nvarchar](14) NOT NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

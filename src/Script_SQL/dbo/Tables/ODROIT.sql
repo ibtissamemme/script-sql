@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ODROIT](
 	[ODROITID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[OMACCESS] [varchar](15) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[OMACCESS] [nvarchar](15) NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATESYNCHRO] [datetime] NULL,

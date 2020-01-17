@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TYPEVEHICULE](
 	[ID_TYPEVEHICULE] [int] NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

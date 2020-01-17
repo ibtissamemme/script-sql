@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[CIVILITE](
 	[CODECIVILITE] [int] NOT NULL,
-	[CIVILITE] [varchar](30) NULL,
-	[LIBELLECOURT] [varchar](5) NULL,
+	[CIVILITE] [nvarchar](30) NULL,
+	[LIBELLECOURT] [nvarchar](5) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,

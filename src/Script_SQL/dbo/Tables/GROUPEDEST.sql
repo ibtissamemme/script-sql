@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[GROUPEDEST](
 	[GROUPEDESTID] [int] NOT NULL,
-	[LIBELLE] [varchar](50) NULL,
-	[TOADDRESS] [varchar](2000) NULL,
-	[SITEID] [varchar](14) NULL,
+	[LIBELLE] [nvarchar](50) NULL,
+	[TOADDRESS] [nvarchar](2000) NULL,
+	[SITEID] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NULL,
 	[DATEMAJ] [datetime] NULL,
 PRIMARY KEY CLUSTERED

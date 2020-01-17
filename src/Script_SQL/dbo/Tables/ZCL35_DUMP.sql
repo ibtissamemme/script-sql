@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[ZCL35_DUMP](
 	[DUMPID] [int] NOT NULL,
 	[NUMDOIGT] [int] NULL,
-	[NOM] [varchar](35) NULL,
-	[PRENOM] [varchar](35) NULL,
-	[INTERLOCUTEURID] [varchar](14) NULL,
+	[NOM] [nvarchar](35) NULL,
+	[PRENOM] [nvarchar](35) NULL,
+	[INTERLOCUTEURID] [nvarchar](14) NULL,
 	[STATUT] [int] NULL,
 	[DATEMAJ] [datetime] NULL,
 	[DATECREATION] [datetime] NULL,

@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[TRANCHE](
-	[CODETRANCHE] [varchar](14) NOT NULL,
-	[LIBELLE] [varchar](35) NULL,
+	[CODETRANCHE] [nvarchar](14) NOT NULL,
+	[LIBELLE] [nvarchar](35) NULL,
 	[HEUREDEBUT] [datetime] NULL,
 	[HEUREFIN] [datetime] NULL,
-	[CODETARIF] [varchar](14) NULL,
+	[CODETARIF] [nvarchar](14) NULL,
 	[DATECREATION] [datetime] NOT NULL,
 	[DATEMAJ] [datetime] NOT NULL,
 	[DATESYNCHRO] [datetime] NULL,
