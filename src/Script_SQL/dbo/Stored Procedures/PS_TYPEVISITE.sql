@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[PS_TYPEVISITE]
 	@flagin INTEGER,
-	@champctrl varchar(80),
-	@typevisiteid VARCHAR(40),
-	@ID VARCHAR(14) OUTPUT
+	@champctrl NVARCHAR(80),
+	@typevisiteid NVARCHAR(40),
+	@ID NVARCHAR(14) OUTPUT
 
 AS
 

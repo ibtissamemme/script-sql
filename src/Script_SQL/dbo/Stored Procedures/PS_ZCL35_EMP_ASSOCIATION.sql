@@ -1,16 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ZCL35_EMP_ASSOCIATION]
 
 	@emp IMAGE,
-	@idproprietaire VARCHAR(14),
-	@tableproprietaire VARCHAR(20)
+	@idproprietaire NVARCHAR(14),
+	@tableproprietaire NVARCHAR(20)
 
 AS
 	DECLARE @idemp INT
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
-	DECLARE @ID VARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @ID NVARCHAR(14)
 	DECLARE @idtableproprietaire INT
-	--DECLARE @idproprietaire VARCHAR(14)
+	--DECLARE @idproprietaire NVARCHAR(14)
 BEGIN
 	-- On calcul la plus petite clef possible
 	SET @idemp = (SELECT MAX(OFICHIERID) FROM OFICHIER)
@@ -30,7 +30,7 @@ BEGIN
 	ELSE BEGIN
 		IF(@tableproprietaire = 'PERSONNEL')BEGIN
 
-			SET @idproprietaire = (SELECT CAST(PERSONNELID AS VARCHAR(14)) FROM PERSONNEL WHERE PERSONNELID = CONVERT(INT,@idproprietaire))
+			SET @idproprietaire = (SELECT CAST(PERSONNELID AS NVARCHAR(14)) FROM PERSONNEL WHERE PERSONNELID = CONVERT(INT,@idproprietaire))
 		END
 		ELSE BEGIN
 			SET @idproprietaire = ''

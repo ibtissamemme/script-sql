@@ -1,17 +1,17 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ESVISITES_INOUT_RES]
-	@residantid VARCHAR(14),
-	@guichetid  VARCHAR(14),
+	@residantid NVARCHAR(14),
+	@guichetid  NVARCHAR(14),
     @dateaction DATETIME,
-	@badge varchar(34),
-	@mode_action VARCHAR(2),
-	@siteid VARCHAR(14),
-	@passagerid varchar(14) OUTPUT
+	@badge NVARCHAR(34),
+	@mode_action NVARCHAR(2),
+	@siteid NVARCHAR(14),
+	@passagerid NVARCHAR(14) OUTPUT
 AS
 
-	DECLARE @FLAG VARCHAR(14)
-	DECLARE @IDENTITY VARCHAR(14)
-	DECLARE @nomprenom VARCHAR(70)
-	DECLARE @nomguichet VARCHAR(40)
+	DECLARE @FLAG NVARCHAR(14)
+	DECLARE @IDENTITY NVARCHAR(14)
+	DECLARE @nomprenom NVARCHAR(70)
+	DECLARE @nomguichet NVARCHAR(40)
   BEGIN
 	SET @nomguichet=(SELECT GUICHET FROM GUICHET WHERE GUICHETID=@guichetid)
 	IF @passagerid IS NULL OR LTRIM(RTRIM(@passagerid))='' BEGIN

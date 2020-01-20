@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[PS_SITE]
 	@flagin INTEGER,
-	@champctrl varchar(80),
-	@siteid VARCHAR(40),
-	@ID VARCHAR(14) OUTPUT
+	@champctrl NVARCHAR(80),
+	@siteid NVARCHAR(40),
+	@ID NVARCHAR(14) OUTPUT
 
 AS
 

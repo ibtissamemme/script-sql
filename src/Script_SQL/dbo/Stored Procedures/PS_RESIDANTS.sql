@@ -1,111 +1,111 @@
 ﻿CREATE PROCEDURE [dbo].[PS_RESIDANTS]
 	@flagin int,
-	@champctrl varchar(80),
-	@societe varchar(35),
-	@civilite varchar(30),
-	@nomjeunefille varchar(35),
-	@nom varchar(35),
-	@prenom varchar(35),
-	@fonction varchar(35),
-	@telephone varchar(20),
-	@email varchar(150),
-	@gsm varchar(20),
-	@fax varchar(20),
-	@matricule varchar(150),
-	--@photo varchar(max),
-	@persoadresse varchar(max),
-	@persocp varchar(10),
-	@persoville varchar(35),
-	@persoprovince varchar(35),
-	@persopays varchar(35),
-	@persotelephone varchar(20),
-	@thepassword varchar(250),
-	@thelogin varchar(50),
-	@site varchar(40),
-	@service varchar(60),
-	@departement varchar(40),
-	@batiment varchar(35),
-	@etage varchar(7),
-	@bureau varchar(15),
-	@codeacces varchar(24),
-	@boitepostale varchar(7),
-	@refimportation varchar(48),
+	@champctrl NVARCHAR(80),
+	@societe NVARCHAR(35),
+	@civilite NVARCHAR(30),
+	@nomjeunefille NVARCHAR(35),
+	@nom NVARCHAR(35),
+	@prenom NVARCHAR(35),
+	@fonction NVARCHAR(35),
+	@telephone NVARCHAR(20),
+	@email NVARCHAR(150),
+	@gsm NVARCHAR(20),
+	@fax NVARCHAR(20),
+	@matricule NVARCHAR(150),
+	--@photo NVARCHAR(max),
+	@persoadresse NVARCHAR(max),
+	@persocp NVARCHAR(10),
+	@persoville NVARCHAR(35),
+	@persoprovince NVARCHAR(35),
+	@persopays NVARCHAR(35),
+	@persotelephone NVARCHAR(20),
+	@thepassword NVARCHAR(250),
+	@thelogin NVARCHAR(50),
+	@site NVARCHAR(40),
+	@service NVARCHAR(60),
+	@departement NVARCHAR(40),
+	@batiment NVARCHAR(35),
+	@etage NVARCHAR(7),
+	@bureau NVARCHAR(15),
+	@codeacces NVARCHAR(24),
+	@boitepostale NVARCHAR(7),
+	@refimportation NVARCHAR(48),
 	--Secrétariat
-	@matriculeAJ varchar(50),
-	@prenomAJ varchar(35),
-	@nomAJ varchar(35),
-	@telephoneAJ varchar(20),
-	@candidatmailing varchar(2),
+	@matriculeAJ NVARCHAR(50),
+	@prenomAJ NVARCHAR(35),
+	@nomAJ NVARCHAR(35),
+	@telephoneAJ NVARCHAR(20),
+	@candidatmailing NVARCHAR(2),
 	@vip int,
 	--Flag
-	--@flagsuppression varchar(1),
+	--@flagsuppression NVARCHAR(1),
 	@usertype int,
-	@ID VARCHAR(18) OUTPUT
+	@ID NVARCHAR(18) OUTPUT
 
 AS
-	DECLARE @identity VARCHAR(14)
-	DECLARE @flag VARCHAR(14)
-	DECLARE @myid VARCHAR(14)
-	DECLARE @societeid varchar(40)
-	DECLARE @fonctionid varchar(48)
-	DECLARE @departementid varchar(40)
-	DECLARE @serviceid varchar(40)
-	DECLARE @civiliteid varchar(18)
-	DECLARE @natureid varchar(14)
-	DECLARE @libcodeacces varchar(30)
-	DECLARE @nationaliteid varchar(14)
-	DECLARE @siteid varchar(14)
-	DECLARE @vehiculeid varchar(14)
-	DECLARE @ResIdAj varchar(14)
-    DECLARE @locid varchar(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @myid NVARCHAR(14)
+	DECLARE @societeid NVARCHAR(40)
+	DECLARE @fonctionid NVARCHAR(48)
+	DECLARE @departementid NVARCHAR(40)
+	DECLARE @serviceid NVARCHAR(40)
+	DECLARE @civiliteid NVARCHAR(18)
+	DECLARE @natureid NVARCHAR(14)
+	DECLARE @libcodeacces NVARCHAR(30)
+	DECLARE @nationaliteid NVARCHAR(14)
+	DECLARE @siteid NVARCHAR(14)
+	DECLARE @vehiculeid NVARCHAR(14)
+	DECLARE @ResIdAj NVARCHAR(14)
+    DECLARE @locid NVARCHAR(14)
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
 	DECLARE @TMP int
-	DECLARE @loc_thelogin varchar(50)
-	DECLARE @loc_thepassword varchar(250)
-	DECLARE @interdit varchar(1)
-	DECLARE @habilitationvisite varchar(1)
-	DECLARE @externalid varchar(24)
-	DECLARE @listerouge varchar(1)
-	DECLARE @isextern varchar(1)
-	DECLARE @isresident varchar(1)
-	DECLARE @planid varchar(14)
-	DECLARE @batimentid varchar(18)
-	DECLARE @etageid varchar(18)
-	DECLARE @bureauid varchar(18)
-	DECLARE @libnom varchar(35)
-	DECLARE @libprenom varchar(35)
-	DECLARE @libnomprenom varchar(70)
-	DECLARE @libetage varchar(7)
-	DECLARE @libbatiment varchar(35)
-	DECLARE @libservice varchar(60)
-	DECLARE @libsite varchar(35)
-	DECLARE @libdepartement varchar(40)
-	DECLARE @libsociete varchar(35)
-	DECLARE @libfonction varchar(35)
-	DECLARE @libbureau varchar(35)
-	DECLARE @libcivilite varchar(30)
-	DECLARE @isactif varchar(1)
-	DECLARE @libmatricule varchar(150)
-	DECLARE @libnomjeunefille varchar(35)
-	DECLARE @libtelephone varchar(20)
-	DECLARE @libemail varchar(150)
-	DECLARE @libgsm varchar(20)
-	DECLARE @libfax varchar(20)
-	--DECLARE @libphoto varchar(150)
-	DECLARE @libpersoadresse varchar(150)
-	DECLARE @libpersocp varchar(9)
-	DECLARE @libpersoville varchar(50)
-	DECLARE @libpersoprovince varchar(50)
-	DECLARE @libpersopays varchar(35)
-    DECLARE @libpersotelephone varchar(20)
-	DECLARE @libboitepostale varchar(10)
-	DECLARE @librefimportation varchar(48)
-	DECLARE @libcandidatmailing varchar(1)
-	DECLARE @libmatriculeAJ varchar(50)
-	DECLARE @libprenomAJ varchar(35)
-	DECLARE @libnomAJ varchar(35)
-	DECLARE @libtelephoneAJ varchar(20)
+	DECLARE @loc_thelogin NVARCHAR(50)
+	DECLARE @loc_thepassword NVARCHAR(250)
+	DECLARE @interdit NVARCHAR(1)
+	DECLARE @habilitationvisite NVARCHAR(1)
+	DECLARE @externalid NVARCHAR(24)
+	DECLARE @listerouge NVARCHAR(1)
+	DECLARE @isextern NVARCHAR(1)
+	DECLARE @isresident NVARCHAR(1)
+	DECLARE @planid NVARCHAR(14)
+	DECLARE @batimentid NVARCHAR(18)
+	DECLARE @etageid NVARCHAR(18)
+	DECLARE @bureauid NVARCHAR(18)
+	DECLARE @libnom NVARCHAR(35)
+	DECLARE @libprenom NVARCHAR(35)
+	DECLARE @libnomprenom NVARCHAR(70)
+	DECLARE @libetage NVARCHAR(7)
+	DECLARE @libbatiment NVARCHAR(35)
+	DECLARE @libservice NVARCHAR(60)
+	DECLARE @libsite NVARCHAR(35)
+	DECLARE @libdepartement NVARCHAR(40)
+	DECLARE @libsociete NVARCHAR(35)
+	DECLARE @libfonction NVARCHAR(35)
+	DECLARE @libbureau NVARCHAR(35)
+	DECLARE @libcivilite NVARCHAR(30)
+	DECLARE @isactif NVARCHAR(1)
+	DECLARE @libmatricule NVARCHAR(150)
+	DECLARE @libnomjeunefille NVARCHAR(35)
+	DECLARE @libtelephone NVARCHAR(20)
+	DECLARE @libemail NVARCHAR(150)
+	DECLARE @libgsm NVARCHAR(20)
+	DECLARE @libfax NVARCHAR(20)
+	--DECLARE @libphoto NVARCHAR(150)
+	DECLARE @libpersoadresse NVARCHAR(150)
+	DECLARE @libpersocp NVARCHAR(9)
+	DECLARE @libpersoville NVARCHAR(50)
+	DECLARE @libpersoprovince NVARCHAR(50)
+	DECLARE @libpersopays NVARCHAR(35)
+    DECLARE @libpersotelephone NVARCHAR(20)
+	DECLARE @libboitepostale NVARCHAR(10)
+	DECLARE @librefimportation NVARCHAR(48)
+	DECLARE @libcandidatmailing NVARCHAR(1)
+	DECLARE @libmatriculeAJ NVARCHAR(50)
+	DECLARE @libprenomAJ NVARCHAR(35)
+	DECLARE @libnomAJ NVARCHAR(35)
+	DECLARE @libtelephoneAJ NVARCHAR(20)
 BEGIN
 	SET @nbupdate = 0
 	SET @nbinsert = 0

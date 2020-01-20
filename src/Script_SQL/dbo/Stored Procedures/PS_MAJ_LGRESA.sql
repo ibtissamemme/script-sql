@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[PS_MAJ_LGRESA]
 
-    @codelgreservation VARCHAR(14),
-    @porte_code VARCHAR(50)
+    @codelgreservation NVARCHAR(14),
+    @porte_code NVARCHAR(50)
 AS
 
 BEGIN

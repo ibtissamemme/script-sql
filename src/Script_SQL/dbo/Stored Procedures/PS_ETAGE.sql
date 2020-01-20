@@ -1,14 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ETAGE]
 	@flagin INT,
-	@champctrl varchar(80),
-	@batimentid varchar(35),
-	@libelle VARCHAR(40),
-	@ID VARCHAR(18) OUTPUT
+	@champctrl NVARCHAR(80),
+	@batimentid NVARCHAR(35),
+	@libelle NVARCHAR(40),
+	@ID NVARCHAR(18) OUTPUT
 
 AS
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
-	DECLARE @libel VARCHAR(40)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @libel NVARCHAR(40)
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
 BEGIN

@@ -1,22 +1,22 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ESRESIDANT]
 
     --RESIDANT
-	@siteid VARCHAR(14),
-	@poste  VARCHAR(150),
-	@mode_action VARCHAR(1),
-    @badge VARCHAR(50),
-    @actiondate VARCHAR(20),
-	@typeinsert VARCHAR(14),
-	@typelecteur VARCHAR(40),
-    @RETOUR VARCHAR(150) OUTPUT
+	@siteid NVARCHAR(14),
+	@poste  NVARCHAR(150),
+	@mode_action NVARCHAR(1),
+    @badge NVARCHAR(50),
+    @actiondate NVARCHAR(20),
+	@typeinsert NVARCHAR(14),
+	@typelecteur NVARCHAR(40),
+    @RETOUR NVARCHAR(150) OUTPUT
 
 AS
 
-	DECLARE @residantid VARCHAR(14)
-	DECLARE @passagerid VARCHAR(14)
-	DECLARE @guichetid VARCHAR(14)
-	DECLARE @societeresid VARCHAR(35)
-	DECLARE @nomprenomresid VARCHAR(70)
+	DECLARE @residantid NVARCHAR(14)
+	DECLARE @passagerid NVARCHAR(14)
+	DECLARE @guichetid NVARCHAR(14)
+	DECLARE @societeresid NVARCHAR(35)
+	DECLARE @nomprenomresid NVARCHAR(70)
 	DECLARE @dateaction DATETIME
 
 BEGIN

@@ -2,17 +2,17 @@
 CREATE PROCEDURE [dbo].[PS_ZCL35_EMP_INSERTION]
 
 	@idmembio INT,
-	--@idbiovein VARCHAR(15),
+	--@idbiovein NVARCHAR(15),
 	@numdoigt INT,
-	@nom VARCHAR(35),
-	@prenom VARCHAR(35),
-	@idinterlocuteur VARCHAR(15)
+	@nom NVARCHAR(35),
+	@prenom NVARCHAR(35),
+	@idinterlocuteur NVARCHAR(15)
 
 AS
 	DECLARE @idemp INT
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
-	DECLARE @ID VARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @ID NVARCHAR(14)
 BEGIN
 
 	--on regarde si la ligne existe dans la table ZCL35_Dump

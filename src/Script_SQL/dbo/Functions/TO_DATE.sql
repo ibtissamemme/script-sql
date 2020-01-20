@@ -1,7 +1,7 @@
 ﻿CREATE FUNCTION [dbo].[TO_DATE]
 (
-    @Str VARCHAR(64),
-    @format VARCHAR(21)
+    @Str NVARCHAR(64),
+    @format NVARCHAR(21)
 )
 RETURNS DATETIME
 AS

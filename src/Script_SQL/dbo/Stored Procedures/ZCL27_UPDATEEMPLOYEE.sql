@@ -1,13 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[ZCL27_UPDATEEMPLOYEE]
 	@ID INT,
-	@ECard VARCHAR(45),
+	@ECard NVARCHAR(45),
 	@ECardAssigned INT,
 	@EID INT,
-	@ELastUpdatedTime VARCHAR(19),
+	@ELastUpdatedTime NVARCHAR(19),
 	@EReference INT,
 	@EVisitor INT,
 	@StatutSortie INT,
-	@SiteID VARCHAR(14)
+	@SiteID NVARCHAR(14)
 AS
 	IF @StatutSortie = 1
 		UPDATE ZCL27_BADGE SET B_ASSIGNED = @ECardAssigned WHERE B_CARD_NO = @ECard AND SITEID = @SiteID

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ESVISITES_OUTINT]
-	@visiteid VARCHAR(14),
-    @actionDate VARCHAR(20)
+	@visiteid NVARCHAR(14),
+    @actionDate NVARCHAR(20)
 AS
 
 BEGIN

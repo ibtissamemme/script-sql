@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[PS_IMPORT_PHOTO]
 	@flagin int,
-	@champctrl varchar(80),
-	@uniquekey VARCHAR(40),
+	@champctrl NVARCHAR(80),
+	@uniquekey NVARCHAR(40),
 	@photo IMAGE,
-	@ID VARCHAR(18) OUTPUT
+	@ID NVARCHAR(18) OUTPUT
 
 AS
 	 DECLARE @TMP INT

@@ -1,25 +1,25 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ESVISITES_LOG_INS]
-	@quiid VARCHAR(14),
-	@quitype  VARCHAR(40),
-    @nomprenom VARCHAR(70),
-	@societe VARCHAR(70),
-	@numbadge VARCHAR(200),
-	@sens VARCHAR(50),
-	@etat VARCHAR(50),
-	@details varchar(2000),
-	@datepassage varchar(20),
-	@typeinsert VARCHAR(14),
-	@remotedate VARCHAR(20),
-	@siteid VARCHAR(14),
-	@guichetid VARCHAR(14),
-	@poste VARCHAR(50),
-	@typeLecteur VARCHAR(40)
+	@quiid NVARCHAR(14),
+	@quitype  NVARCHAR(40),
+    @nomprenom NVARCHAR(70),
+	@societe NVARCHAR(70),
+	@numbadge NVARCHAR(200),
+	@sens NVARCHAR(50),
+	@etat NVARCHAR(50),
+	@details NVARCHAR(2000),
+	@datepassage NVARCHAR(20),
+	@typeinsert NVARCHAR(14),
+	@remotedate NVARCHAR(20),
+	@siteid NVARCHAR(14),
+	@guichetid NVARCHAR(14),
+	@poste NVARCHAR(50),
+	@typeLecteur NVARCHAR(40)
 
 
 AS
-	DECLARE @FLUXID VARCHAR(14)
-	DECLARE @FLAG VARCHAR(14)
-	DECLARE @IDENTITY VARCHAR(14)
+	DECLARE @FLUXID NVARCHAR(14)
+	DECLARE @FLAG NVARCHAR(14)
+	DECLARE @IDENTITY NVARCHAR(14)
     BEGIN
 	INSERT INTO SEQ_IDENTITY(LIBELLE) VALUES ('OK')
 	SET @IDENTITY = (SELECT @@IDENTITY AS ID)

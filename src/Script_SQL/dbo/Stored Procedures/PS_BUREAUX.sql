@@ -1,16 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[PS_BUREAUX]
 	@flagin INT,
-	@champctrl varchar(80),
-	@etageid VARCHAR(14),
-	@bureau VARCHAR(35),
-	@ID VARCHAR(18) OUTPUT
+	@champctrl NVARCHAR(80),
+	@etageid NVARCHAR(14),
+	@bureau NVARCHAR(35),
+	@ID NVARCHAR(18) OUTPUT
 
 AS
 
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
 	DECLARE @TMP INT
 
 BEGIN

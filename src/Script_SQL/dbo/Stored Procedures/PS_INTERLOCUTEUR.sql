@@ -1,65 +1,65 @@
 ﻿CREATE PROCEDURE [dbo].[PS_INTERLOCUTEUR]
 	@flagin INT,
-	@champctrl varchar(80),
+	@champctrl NVARCHAR(80),
 
-	@civilite VARCHAR(30),
-	@nom VARCHAR(35),
-	@prenom VARCHAR(34),
-	@nomjeunefille VARCHAR(35),
+	@civilite NVARCHAR(30),
+	@nom NVARCHAR(35),
+	@prenom NVARCHAR(34),
+	@nomjeunefille NVARCHAR(35),
 	@datenaissance DATETIME,
-	@lieunaissance VARCHAR(70),
-	@pays VARCHAR(35),
-	@societe VARCHAR(35),
-	@fonction VARCHAR(35),
-	@nature VARCHAR(35),
-	@adresse VARCHAR(150),
-	@codepostal VARCHAR(10),
-	@ville VARCHAR(35),
-	--@paysadresse VARCHAR(50),
-	@refimportation VARCHAR(48),
+	@lieunaissance NVARCHAR(70),
+	@pays NVARCHAR(35),
+	@societe NVARCHAR(35),
+	@fonction NVARCHAR(35),
+	@nature NVARCHAR(35),
+	@adresse NVARCHAR(150),
+	@codepostal NVARCHAR(10),
+	@ville NVARCHAR(35),
+	--@paysadresse NVARCHAR(50),
+	@refimportation NVARCHAR(48),
 
-	@immatriculation varchar(15),
-	@telephone varchar(20),
-	@email varchar(150),
-	@gsm varchar(20),
-	@fax varchar(20),
+	@immatriculation NVARCHAR(15),
+	@telephone NVARCHAR(20),
+	@email NVARCHAR(150),
+	@gsm NVARCHAR(20),
+	@fax NVARCHAR(20),
 	@finvaliditeauto datetime,
 	@datedernvisite datetime,
 
-	@societe_adresse VARCHAR(150),
-	@societe_siret VARCHAR(20),
-	@societe_cp VARCHAR(10),
-	@societe_ville VARCHAR(35),
-	@societe_pays VARCHAR(35),
-	--@statut VARCHAR(35),
+	@societe_adresse NVARCHAR(150),
+	@societe_siret NVARCHAR(20),
+	@societe_cp NVARCHAR(10),
+	@societe_ville NVARCHAR(35),
+	@societe_pays NVARCHAR(35),
+	--@statut NVARCHAR(35),
 
-	--@identiteid varchar(14),
-	@typeidentiteid varchar(35),
-	@delivrepar varchar(80),
-	@numero varchar(20),
+	--@identiteid NVARCHAR(14),
+	@typeidentiteid NVARCHAR(35),
+	@delivrepar NVARCHAR(80),
+	@numero NVARCHAR(20),
 	@finvalidite datetime,
 	--nationaliteid/paysid
-	@nationalite varchar(50),
+	@nationalite NVARCHAR(50),
 
-	@interdit varchar(1),
+	@interdit NVARCHAR(1),
 	@debutinterdit datetime,
 	@fininterdit datetime,
 
-	@ID VARCHAR(18) OUTPUT
+	@ID NVARCHAR(18) OUTPUT
 AS
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
-	DECLARE @societeid VARCHAR(18)
-	DECLARE @fonctionid VARCHAR(18) --int
-	DECLARE @civiliteid VARCHAR(18) --int
-	DECLARE @natureid VARCHAR(18)
-	DECLARE @nationaliteid VARCHAR(18)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @societeid NVARCHAR(18)
+	DECLARE @fonctionid NVARCHAR(18) --int
+	DECLARE @civiliteid NVARCHAR(18) --int
+	DECLARE @natureid NVARCHAR(18)
+	DECLARE @nationaliteid NVARCHAR(18)
 	--<champctrl>NOMPRENOM,EMAIL,IMMATRICULATION</champctrl>
 
-	DECLARE @nomprenom varchar(70)
+	DECLARE @nomprenom NVARCHAR(70)
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
-	DECLARE @identitieid varchar(18)
+	DECLARE @identitieid NVARCHAR(18)
 	DECLARE @tmp int
 	DECLARE @fininterdit2 datetime
 	DECLARE @debutinterdit2 datetime

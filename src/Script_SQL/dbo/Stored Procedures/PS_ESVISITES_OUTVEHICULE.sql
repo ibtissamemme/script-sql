@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[PS_ESVISITES_OUTVEHICULE]
-	@residantid VARCHAR(14),
-	@guichetid  VARCHAR(14),
-    @actionDate VARCHAR(20),
-	@badge varchar(34),
-	@PASSAGERID varchar(14)
+	@residantid NVARCHAR(14),
+	@guichetid  NVARCHAR(14),
+    @actionDate NVARCHAR(20),
+	@badge NVARCHAR(34),
+	@PASSAGERID NVARCHAR(14)
 AS
 DECLARE @TMP   int
 BEGIN

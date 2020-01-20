@@ -2,15 +2,15 @@
 
 
     --INTERLOCUTEUR
-	@siteid VARCHAR(14),
-	@poste  VARCHAR(150),
-	@mode_action VARCHAR(1),
-    @badge VARCHAR(50),
-	@entite VARCHAR(20),
-    @actiondate VARCHAR(20),
-	@typeinsert VARCHAR(14),
-	@typelecteur VARCHAR(40),
-    @RETOUR VARCHAR(150) OUTPUT
+	@siteid NVARCHAR(14),
+	@poste  NVARCHAR(150),
+	@mode_action NVARCHAR(1),
+    @badge NVARCHAR(50),
+	@entite NVARCHAR(20),
+    @actiondate NVARCHAR(20),
+	@typeinsert NVARCHAR(14),
+	@typelecteur NVARCHAR(40),
+    @RETOUR NVARCHAR(150) OUTPUT
 
 AS
 

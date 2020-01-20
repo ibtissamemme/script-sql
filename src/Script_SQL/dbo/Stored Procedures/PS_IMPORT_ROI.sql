@@ -1,92 +1,92 @@
 ﻿CREATE PROCEDURE [dbo].[PS_IMPORT_ROI]
 	@flagin int,
-	@champctrl varchar(80),
+	@champctrl NVARCHAR(80),
 
-	@mvt VARCHAR(03),
-	@source VARCHAR(12),
-	@etat VARCHAR(06),
-	@raison VARCHAR(10),
-	@identifiant VARCHAR(10),
-	@qualitecivilite VARCHAR(5),
-	@nom VARCHAR(50),
-	@prenom VARCHAR(32),
-	@societe VARCHAR(05),
-	@unitemanageriale VARCHAR(20),
-	@labelunitemanageriale VARCHAR(100),
-	@typepopulation VARCHAR(02),
-	@typepersonne VARCHAR(30),
-	@iesocieteprestation VARCHAR(100),
-	@iedebutmission VARCHAR(17),
-	@iefinmission VARCHAR(17),
-	@mail VARCHAR(100),
-	@codefonction VARCHAR(04),
-	@fonction VARCHAR(50),
-	@site VARCHAR(3),
-	@libellesite VARCHAR(32),
-	@batiment VARCHAR(3),
-	@etage VARCHAR(3),
-	@numerobureau VARCHAR(6),
-	@rue VARCHAR(120),
-	@codepostal VARCHAR(5),
-	@ville VARCHAR(32),
-	@pays VARCHAR(3),
-	@telephone VARCHAR(13),
-	@telephoneinterne VARCHAR(6),
-	@fax VARCHAR(13),
-	@codenaturecontrattravail VARCHAR(05),
-	@indabsencelongueduree VARCHAR(01),
-	@statutpersonne VARCHAR(02),
-	@codeantenne VARCHAR(20),
-	@anciensite VARCHAR(3),
-	@anciencodeantenne VARCHAR(20),
-	@thelogin VARCHAR(50),
-	@ID VARCHAR(18) OUTPUT
+	@mvt NVARCHAR(03),
+	@source NVARCHAR(12),
+	@etat NVARCHAR(06),
+	@raison NVARCHAR(10),
+	@identifiant NVARCHAR(10),
+	@qualitecivilite NVARCHAR(5),
+	@nom NVARCHAR(50),
+	@prenom NVARCHAR(32),
+	@societe NVARCHAR(05),
+	@unitemanageriale NVARCHAR(20),
+	@labelunitemanageriale NVARCHAR(100),
+	@typepopulation NVARCHAR(02),
+	@typepersonne NVARCHAR(30),
+	@iesocieteprestation NVARCHAR(100),
+	@iedebutmission NVARCHAR(17),
+	@iefinmission NVARCHAR(17),
+	@mail NVARCHAR(100),
+	@codefonction NVARCHAR(04),
+	@fonction NVARCHAR(50),
+	@site NVARCHAR(3),
+	@libellesite NVARCHAR(32),
+	@batiment NVARCHAR(3),
+	@etage NVARCHAR(3),
+	@numerobureau NVARCHAR(6),
+	@rue NVARCHAR(120),
+	@codepostal NVARCHAR(5),
+	@ville NVARCHAR(32),
+	@pays NVARCHAR(3),
+	@telephone NVARCHAR(13),
+	@telephoneinterne NVARCHAR(6),
+	@fax NVARCHAR(13),
+	@codenaturecontrattravail NVARCHAR(05),
+	@indabsencelongueduree NVARCHAR(01),
+	@statutpersonne NVARCHAR(02),
+	@codeantenne NVARCHAR(20),
+	@anciensite NVARCHAR(3),
+	@anciencodeantenne NVARCHAR(20),
+	@thelogin NVARCHAR(50),
+	@ID NVARCHAR(18) OUTPUT
 
 AS
-	DECLARE @identity VARCHAR(14)
-	DECLARE @flag VARCHAR(14)
-	DECLARE @myid VARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @myid NVARCHAR(14)
 
-	DECLARE @locmvt VARCHAR(03)
-	DECLARE @locsource VARCHAR(12)
-	DECLARE @locetat VARCHAR(06)
-	DECLARE @locraison VARCHAR(10)
-	DECLARE @locidentifiant VARCHAR(10)
-	DECLARE @locqualitecivilite VARCHAR(5)
-	DECLARE @locnom VARCHAR(50)
-	DECLARE @locprenom VARCHAR(32)
-	DECLARE @locsociete VARCHAR(05)
-	DECLARE @locunitemanageriale VARCHAR(20)
-	DECLARE @loclabelunitemanageriale VARCHAR(100)
-	DECLARE @loctypepopulation VARCHAR(02)
-	DECLARE @loctypepersonne VARCHAR(30)
-	DECLARE @lociesocieteprestation VARCHAR(100)
-	DECLARE @lociedebutmission VARCHAR(17)
-	DECLARE @lociefinmission VARCHAR(17)
-	DECLARE @locmail VARCHAR(100)
-	DECLARE @loccodefonction VARCHAR(04)
-	DECLARE @locfonction VARCHAR(50)
-	DECLARE @locsite VARCHAR(3)
-	DECLARE @loclibellesite VARCHAR(32)
-	DECLARE @locbatiment VARCHAR(3)
-	DECLARE @locetage VARCHAR(3)
-	DECLARE @locnumerobureau VARCHAR(6)
-	DECLARE @locrue VARCHAR(120)
-	DECLARE @loccodepostal VARCHAR(5)
-	DECLARE @locville VARCHAR(32)
-	DECLARE @locpays VARCHAR(3)
-	DECLARE @loctelephone VARCHAR(13)
-	DECLARE @loctelephoneinterne VARCHAR(6)
-	DECLARE @locfax VARCHAR(13)
-	DECLARE @loccodenaturecontrattravail VARCHAR(05)
-	DECLARE @locindabsencelongueduree VARCHAR(01)
-	DECLARE @locstatutpersonne VARCHAR(02)
-	DECLARE @loccodeantenne VARCHAR(20)
-	DECLARE @locanciensite VARCHAR(3)
-	DECLARE @locanciencodeantenne VARCHAR(20)
-	DECLARE @locnomprenom varchar(70)
-    DECLARE @locid varchar(14)
-	DECLARE @locthelogin varchar(50)
+	DECLARE @locmvt NVARCHAR(03)
+	DECLARE @locsource NVARCHAR(12)
+	DECLARE @locetat NVARCHAR(06)
+	DECLARE @locraison NVARCHAR(10)
+	DECLARE @locidentifiant NVARCHAR(10)
+	DECLARE @locqualitecivilite NVARCHAR(5)
+	DECLARE @locnom NVARCHAR(50)
+	DECLARE @locprenom NVARCHAR(32)
+	DECLARE @locsociete NVARCHAR(05)
+	DECLARE @locunitemanageriale NVARCHAR(20)
+	DECLARE @loclabelunitemanageriale NVARCHAR(100)
+	DECLARE @loctypepopulation NVARCHAR(02)
+	DECLARE @loctypepersonne NVARCHAR(30)
+	DECLARE @lociesocieteprestation NVARCHAR(100)
+	DECLARE @lociedebutmission NVARCHAR(17)
+	DECLARE @lociefinmission NVARCHAR(17)
+	DECLARE @locmail NVARCHAR(100)
+	DECLARE @loccodefonction NVARCHAR(04)
+	DECLARE @locfonction NVARCHAR(50)
+	DECLARE @locsite NVARCHAR(3)
+	DECLARE @loclibellesite NVARCHAR(32)
+	DECLARE @locbatiment NVARCHAR(3)
+	DECLARE @locetage NVARCHAR(3)
+	DECLARE @locnumerobureau NVARCHAR(6)
+	DECLARE @locrue NVARCHAR(120)
+	DECLARE @loccodepostal NVARCHAR(5)
+	DECLARE @locville NVARCHAR(32)
+	DECLARE @locpays NVARCHAR(3)
+	DECLARE @loctelephone NVARCHAR(13)
+	DECLARE @loctelephoneinterne NVARCHAR(6)
+	DECLARE @locfax NVARCHAR(13)
+	DECLARE @loccodenaturecontrattravail NVARCHAR(05)
+	DECLARE @locindabsencelongueduree NVARCHAR(01)
+	DECLARE @locstatutpersonne NVARCHAR(02)
+	DECLARE @loccodeantenne NVARCHAR(20)
+	DECLARE @locanciensite NVARCHAR(3)
+	DECLARE @locanciencodeantenne NVARCHAR(20)
+	DECLARE @locnomprenom NVARCHAR(70)
+    DECLARE @locid NVARCHAR(14)
+	DECLARE @locthelogin NVARCHAR(50)
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
 	DECLARE @TMP int

@@ -1,16 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[PS_SERVICE]
 	@flagin INT,
-	@champctrl varchar(80),
-	@deptid varchar(35),
-	@libelle VARCHAR(60),
-	@ID VARCHAR(18) OUTPUT
+	@champctrl NVARCHAR(80),
+	@deptid NVARCHAR(35),
+	@libelle NVARCHAR(60),
+	@ID NVARCHAR(18) OUTPUT
 
 AS
-	DECLARE @flag VARCHAR(14)
-	DECLARE @identity VARCHAR(14)
+	DECLARE @flag NVARCHAR(14)
+	DECLARE @identity NVARCHAR(14)
 	DECLARE @nbupdate int
 	DECLARE @nbinsert int
-	DECLARE @dptid varchar(18)
+	DECLARE @dptid NVARCHAR(18)
 BEGIN
 	Set @nbupdate = 0
 	Set @nbinsert = 0
